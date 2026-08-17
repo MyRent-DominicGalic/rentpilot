@@ -1,0 +1,232 @@
+1763717847a:1:{s:28:"builder/sections/pricing.htm";a:5:{s:8:"fileName";s:28:"builder/sections/pricing.htm";s:7:"content";s:3892:"<{{ section.html_tag }} id="{{ section.html_anchor }}" class="{{ section.css_classes |join(' ') }}">
+
+    <div class="{{ section.container_style }}">
+
+      {% if section.use_tabs %}
+
+      {% set tabs = collect(section.columns).pluck('tab').unique().toArray() %}
+
+      {% set tabs_content = collect(section.columns).groupBy('tab') %}
+
+      <nav class="c-Tabs__nav flex justify-center overflow-hidden pt-8">
+          {% for key, item in tabs %}
+          <a href="#{{ item | slug }}" class="{{ key == 0 ? 'active' }} no-scroll text-lg px-8 py-2 border-b border-silver font-medium whitespace-nowrap relative before:content-[''] before:absolute before:-bottom-0.5 before:left-0 before:right-0 before:h-1" type="button">
+            {{ item }}
+          </a>
+          {% endfor %}
+      </nav>
+
+      {% else %}
+
+        {% set tabs_content = section.columns %}
+
+      {% endif %}
+
+      {% for key, tab in tabs_content %}
+      <div id="{{ key | slug }}" class="c-Tabs__tab {{ loop.first ? 'active' }}">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 pt-12">
+          {% for item in tab %}
+            <div class="flex flex-col gap-4 bg-white border border-silver border-opacity-50 rounded-2xl pt-2 pb-6">
+                <div class="text-lg lg:text-xl font-bold sticky top-28 pt-4 px-4 pb-2 bg-white">{{ item.title }}</div>
+                <div class="px-4 flex flex-col gap-4">
+                  {% if item.has_calculator %}
+                  <select class="js-switch-price px-4 py-2 border border-silver rounded-lg text-gray-dark font-medium">
+                      {% for item in item.prices %}
+                      <option value="{{ item.label }}" data-label="{{ item.value | raw }}">{{ item.label }}</option>
+                      {% endfor %}
+                  </select>
+                  <div class="flex items-end gap-2 js-display-price price-display">
+                    {{ item.prices[0].value | raw }}
+                  </div>
+                  <div class="border-b border-silver"></div>
+                  {% endif %}
+                  <div class="richText text-sm leading-tight">
+                    {{ item.content | content }}
+                  </div>
+                  <div>
+                      <a href="{{ 'page' | page({ fullslug: 'kontakt' }) }}" class="block text-center border border-primary text-primary rounded-full transition ease-out duration-300 px-5 py-2.5 font-bold mr-2 hover:bg-primary hover:text-white">Odaberi</a>
+                  </div>
+                </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+
+</{{ section.html_tag }}>
+
+
+{% if section.use_tabs %}
+
+<script type="text/javascript">
+
+    document.querySelectorAll('.js-switch-price').forEach((el) => {
+        el.addEventListener('change', (e) => {
+          console.log('changed');
+          // TODO: Zaminit js-display-price text polja sa data-label of izmjenjenog selecta
+        })
+    })
+
+</script>
+
+{% endif %}
+
+{% if section.use_tabs %}
+
+<script type="text/javascript">
+
+  var myTabs = document.querySelectorAll(".c-Tabs__nav > a");
+
+  function myTabClicks(tabClickEvent) {
+
+    var clickedTab = tabClickEvent.currentTarget;
+
+    for (var i = 0; i < myTabs.length; i++) {
+      myTabs[i].classList.remove("active");
+    }
+
+    clickedTab.classList.add("active");
+
+    tabClickEvent.preventDefault();
+
+    var myContentPanes = document.querySelectorAll(".c-Tabs__tab");
+
+
+    for (i = 0; i < myContentPanes.length; i++) {
+      myContentPanes[i].classList.remove("active");
+    }
+
+    var anchorReference = tabClickEvent.target;
+    var activePaneId = anchorReference.getAttribute("href");
+    var activePane = document.querySelector(activePaneId);
+
+    activePane.classList.add("active");
+
+  }
+
+  for (i = 0; i < myTabs.length; i++) {
+    myTabs[i].addEventListener("click", myTabClicks)
+  }
+
+
+</script>
+
+{% endif %}
+";s:5:"mtime";i:1763630250;s:6:"markup";s:3891:"<{{ section.html_tag }} id="{{ section.html_anchor }}" class="{{ section.css_classes |join(' ') }}">
+
+    <div class="{{ section.container_style }}">
+
+      {% if section.use_tabs %}
+
+      {% set tabs = collect(section.columns).pluck('tab').unique().toArray() %}
+
+      {% set tabs_content = collect(section.columns).groupBy('tab') %}
+
+      <nav class="c-Tabs__nav flex justify-center overflow-hidden pt-8">
+          {% for key, item in tabs %}
+          <a href="#{{ item | slug }}" class="{{ key == 0 ? 'active' }} no-scroll text-lg px-8 py-2 border-b border-silver font-medium whitespace-nowrap relative before:content-[''] before:absolute before:-bottom-0.5 before:left-0 before:right-0 before:h-1" type="button">
+            {{ item }}
+          </a>
+          {% endfor %}
+      </nav>
+
+      {% else %}
+
+        {% set tabs_content = section.columns %}
+
+      {% endif %}
+
+      {% for key, tab in tabs_content %}
+      <div id="{{ key | slug }}" class="c-Tabs__tab {{ loop.first ? 'active' }}">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 pt-12">
+          {% for item in tab %}
+            <div class="flex flex-col gap-4 bg-white border border-silver border-opacity-50 rounded-2xl pt-2 pb-6">
+                <div class="text-lg lg:text-xl font-bold sticky top-28 pt-4 px-4 pb-2 bg-white">{{ item.title }}</div>
+                <div class="px-4 flex flex-col gap-4">
+                  {% if item.has_calculator %}
+                  <select class="js-switch-price px-4 py-2 border border-silver rounded-lg text-gray-dark font-medium">
+                      {% for item in item.prices %}
+                      <option value="{{ item.label }}" data-label="{{ item.value | raw }}">{{ item.label }}</option>
+                      {% endfor %}
+                  </select>
+                  <div class="flex items-end gap-2 js-display-price price-display">
+                    {{ item.prices[0].value | raw }}
+                  </div>
+                  <div class="border-b border-silver"></div>
+                  {% endif %}
+                  <div class="richText text-sm leading-tight">
+                    {{ item.content | content }}
+                  </div>
+                  <div>
+                      <a href="{{ 'page' | page({ fullslug: 'kontakt' }) }}" class="block text-center border border-primary text-primary rounded-full transition ease-out duration-300 px-5 py-2.5 font-bold mr-2 hover:bg-primary hover:text-white">Odaberi</a>
+                  </div>
+                </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+
+</{{ section.html_tag }}>
+
+
+{% if section.use_tabs %}
+
+<script type="text/javascript">
+
+    document.querySelectorAll('.js-switch-price').forEach((el) => {
+        el.addEventListener('change', (e) => {
+          console.log('changed');
+          // TODO: Zaminit js-display-price text polja sa data-label of izmjenjenog selecta
+        })
+    })
+
+</script>
+
+{% endif %}
+
+{% if section.use_tabs %}
+
+<script type="text/javascript">
+
+  var myTabs = document.querySelectorAll(".c-Tabs__nav > a");
+
+  function myTabClicks(tabClickEvent) {
+
+    var clickedTab = tabClickEvent.currentTarget;
+
+    for (var i = 0; i < myTabs.length; i++) {
+      myTabs[i].classList.remove("active");
+    }
+
+    clickedTab.classList.add("active");
+
+    tabClickEvent.preventDefault();
+
+    var myContentPanes = document.querySelectorAll(".c-Tabs__tab");
+
+
+    for (i = 0; i < myContentPanes.length; i++) {
+      myContentPanes[i].classList.remove("active");
+    }
+
+    var anchorReference = tabClickEvent.target;
+    var activePaneId = anchorReference.getAttribute("href");
+    var activePane = document.querySelector(activePaneId);
+
+    activePane.classList.add("active");
+
+  }
+
+  for (i = 0; i < myTabs.length; i++) {
+    myTabs[i].addEventListener("click", myTabClicks)
+  }
+
+
+</script>
+
+{% endif %}";s:4:"code";N;}}

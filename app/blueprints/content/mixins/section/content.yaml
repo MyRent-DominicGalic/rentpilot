@@ -1,0 +1,31 @@
+uuid: e77eeaff-0f6a-47ef-9d3e-e3f2e39ea951
+handle: Content\Content
+type: mixin
+name: Content
+fields:
+  title:
+    label: Title
+    commentAbove: Title of this section
+    type: text
+    span: auto
+    tab: General
+  image:
+    label: Image
+    type: mediafinder
+    commentAbove: Image of this section
+    span: auto
+    mode: image
+    maxItems: 1
+    tab: General
+  content:
+    label: Content
+    type: textarea
+    commentAbove: Text content of this section
+    span: full
+    size: small
+    tab: General
+  button:
+    type: mixin
+    source: Content\Buttons
+    commentAbove: Display link in your content as button. Use a Page or specify a link.
+    tab: General

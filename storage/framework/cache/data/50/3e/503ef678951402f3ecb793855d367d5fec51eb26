@@ -1,0 +1,98 @@
+1787058115a:1:{s:20:"layout/main-menu.htm";a:5:{s:8:"fileName";s:20:"layout/main-menu.htm";s:7:"content";s:2464:"{% for item in items %}
+{% if item.is_enabled %}
+
+{% if not item.parent_id %}
+<div class="relative js-dropdown">
+
+    {% if item.children | length %}
+    <button class="js-dropdown-toggle nav_hover flex items-center gap-1 p-2 select-none cursor-pointer text-gray-dark hover:text-secondary transition ease-out duration-300">
+        <div class="font-medium">{{ item.title }}</div>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 6L8 10L12 6" class="transition ease-out duration-300 stroke-gray-light" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    </button>
+    <ul class="absolute z-10 top-full left-0 mt-7 bg-white rounded-xl {{ item.is_megamenu ? 'flex gap-6 w-fit-dropdown p-6' : 'w-72' }} overflow-hidden shadow-xl opacity-0 invisible pointer-events-none js-dropdown-content">
+        {% for item in item.children %}
+        {% if item.children | length %}
+        <li class="flex items-start gap-3 lg:w-1/4">
+            <img width="40" height="40" src="{{ ('assets/icons/' ~ item.icon ~ '.svg')| theme }}" alt="icon" />
+            <div class="w-full">
+                <div class="text-gray-dark font-bold text-lg mb-2">{{ item.title }}</div>
+                <ul>
+                    {% for item in item.children %}
+                    <li>
+                        <a href="{{ item.page | link }}" {{ item.external ? 'target="_blank" rel="noopener" '}} class="block text-gray-dark font-medium py-2 transition ease-out duration-300 hover:text-secondary">
+                            {{ item.title }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </li>
+        {% else %}
+        <li>
+            <a href="{{ item.page | link }}" {{ item.external ? 'target="_blank" rel="noopener" '}} class="block px-6 py-2 text-gray-dark font-medium transition ease-out duration-300 hover:text-secondary">
+                {{ item.title }}
+            </a>
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+    {% else %}
+    <a class="text-gray-dark p-2 font-medium hover:text-secondary transition ease-out duration-300" href="{{ item.page | link }}" {{ item.external ? 'target="_blank" rel="noopener" '}}>
+        {{ item.title }}
+    </a>
+    {% endif %}
+</div>
+{% endif %}
+{% endif %}
+{% endfor %}
+";s:5:"mtime";i:1778867854;s:6:"markup";s:2462:"{% for item in items %}
+{% if item.is_enabled %}
+
+{% if not item.parent_id %}
+<div class="relative js-dropdown">
+
+    {% if item.children | length %}
+    <button class="js-dropdown-toggle nav_hover flex items-center gap-1 p-2 select-none cursor-pointer text-gray-dark hover:text-secondary transition ease-out duration-300">
+        <div class="font-medium">{{ item.title }}</div>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 6L8 10L12 6" class="transition ease-out duration-300 stroke-gray-light" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    </button>
+    <ul class="absolute z-10 top-full left-0 mt-7 bg-white rounded-xl {{ item.is_megamenu ? 'flex gap-6 w-fit-dropdown p-6' : 'w-72' }} overflow-hidden shadow-xl opacity-0 invisible pointer-events-none js-dropdown-content">
+        {% for item in item.children %}
+        {% if item.children | length %}
+        <li class="flex items-start gap-3 lg:w-1/4">
+            <img width="40" height="40" src="{{ ('assets/icons/' ~ item.icon ~ '.svg')| theme }}" alt="icon" />
+            <div class="w-full">
+                <div class="text-gray-dark font-bold text-lg mb-2">{{ item.title }}</div>
+                <ul>
+                    {% for item in item.children %}
+                    <li>
+                        <a href="{{ item.page | link }}" {{ item.external ? 'target="_blank" rel="noopener" '}} class="block text-gray-dark font-medium py-2 transition ease-out duration-300 hover:text-secondary">
+                            {{ item.title }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </li>
+        {% else %}
+        <li>
+            <a href="{{ item.page | link }}" {{ item.external ? 'target="_blank" rel="noopener" '}} class="block px-6 py-2 text-gray-dark font-medium transition ease-out duration-300 hover:text-secondary">
+                {{ item.title }}
+            </a>
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+    {% else %}
+    <a class="text-gray-dark p-2 font-medium hover:text-secondary transition ease-out duration-300" href="{{ item.page | link }}" {{ item.external ? 'target="_blank" rel="noopener" '}}>
+        {{ item.title }}
+    </a>
+    {% endif %}
+</div>
+{% endif %}
+{% endif %}
+{% endfor %}";s:4:"code";N;}}

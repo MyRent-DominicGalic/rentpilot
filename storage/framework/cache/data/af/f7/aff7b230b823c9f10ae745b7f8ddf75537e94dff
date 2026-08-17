@@ -1,0 +1,16 @@
+1787058114a:1:{s:31:"builder/content/two_columns.htm";a:5:{s:8:"fileName";s:31:"builder/content/two_columns.htm";s:7:"content";s:195:"<div class="sm:flex gap-12 py-6">
+  <div class="sm:w-1/2">
+    {{ section.column_one | content }}
+  </div>
+  <div class="sm:w-1/2">
+    {{ section.column_two | content }}
+  </div>
+</div>
+";s:5:"mtime";i:1778867853;s:6:"markup";s:193:"<div class="sm:flex gap-12 py-6">
+  <div class="sm:w-1/2">
+    {{ section.column_one | content }}
+  </div>
+  <div class="sm:w-1/2">
+    {{ section.column_two | content }}
+  </div>
+</div>";s:4:"code";N;}}

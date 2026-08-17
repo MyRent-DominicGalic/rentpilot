@@ -1,0 +1,49 @@
+1763716671a:1:{s:33:"builder/sections/reviews_list.htm";a:5:{s:8:"fileName";s:33:"builder/sections/reviews_list.htm";s:7:"content";s:1545:"<{{ section.html_tag }} id="{{ section.html_anchor }}" class="{{ section.css_classes |join(' ') }}">
+
+  <div class="{{ section.container_style }} ">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+          {% for item in section.reviews %}
+          <{{  item.url ? 'a' : 'div' }} {% if item.url %}href="{{ item.url | link }}"{% endif %} class="{{ item.url ? 'cursor-pointer' }} hover:filter-none flex flex-col gap-4 relative transition-all hover:shadow-xl border border-silver-light p-6 rounded-2xl">
+              <img class="absolute -top-5 -left-4" width="42" height="42" src="{{ 'assets/icons/bi-quote.svg'| theme }}" alt="icon" />
+              <p class="text-lg text-gray-dark font-medium">
+                {{ item.content }}
+              </p>
+              <div class="flex items-center justify-between gap-4">
+                  <div>
+                      <div class="font-bold">{{ item.author }}</div>
+                      <div class="font-medium text-sm text-gray">{{ item.company }}</div>
+                  </div>
+                  <img class="filter grayscale" width="109" height="44" src="{{ item.logo | media }}" loading="lazy" alt="{{ item.author }} {{ item.company }} {{ section.image | replace({ '_' : ' ', '/site-images/' : '', '.webp' : '' }) }}" title="{{ item.author }} {{ item.company }} {{ section.image | replace({ '_' : ' ', '/site-images/' : '', '.webp' : '' }) }}" />
+              </div>
+          </{{ item.url ? 'a' : 'div' }}>
+          {% endfor %}
+
+      </div>
+  </div>
+
+</{{ section.html_tag }}>";s:5:"mtime";i:1763630250;s:6:"markup";s:1545:"<{{ section.html_tag }} id="{{ section.html_anchor }}" class="{{ section.css_classes |join(' ') }}">
+
+  <div class="{{ section.container_style }} ">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+          {% for item in section.reviews %}
+          <{{  item.url ? 'a' : 'div' }} {% if item.url %}href="{{ item.url | link }}"{% endif %} class="{{ item.url ? 'cursor-pointer' }} hover:filter-none flex flex-col gap-4 relative transition-all hover:shadow-xl border border-silver-light p-6 rounded-2xl">
+              <img class="absolute -top-5 -left-4" width="42" height="42" src="{{ 'assets/icons/bi-quote.svg'| theme }}" alt="icon" />
+              <p class="text-lg text-gray-dark font-medium">
+                {{ item.content }}
+              </p>
+              <div class="flex items-center justify-between gap-4">
+                  <div>
+                      <div class="font-bold">{{ item.author }}</div>
+                      <div class="font-medium text-sm text-gray">{{ item.company }}</div>
+                  </div>
+                  <img class="filter grayscale" width="109" height="44" src="{{ item.logo | media }}" loading="lazy" alt="{{ item.author }} {{ item.company }} {{ section.image | replace({ '_' : ' ', '/site-images/' : '', '.webp' : '' }) }}" title="{{ item.author }} {{ item.company }} {{ section.image | replace({ '_' : ' ', '/site-images/' : '', '.webp' : '' }) }}" />
+              </div>
+          </{{ item.url ? 'a' : 'div' }}>
+          {% endfor %}
+
+      </div>
+  </div>
+
+</{{ section.html_tag }}>";s:4:"code";N;}}

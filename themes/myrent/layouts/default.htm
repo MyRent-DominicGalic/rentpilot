@@ -1,0 +1,61 @@
+description = "Default Layout for Page Entries & CMS Pages"
+title = "Default"
+
+[resources]
+
+[baseComponent]
+
+[global sitemap]
+handle = "Content\SEO\SiteMap"
+
+[global settings]
+handle = "Content\Settings"
+
+[global page_settings]
+handle = "Content\PageSettings"
+
+[section]
+handle = "Content\Page"
+
+[cookiesBar]
+
+[cookiesManage]
+==
+<!DOCTYPE html>
+<html lang="{{ this.site.code }}">
+    <head>
+
+        {% partial 'head' %}
+
+    </head>
+    <body class="layout-{{ this.page.layout }} page-{{ this.page.id }} page-{{ section.slug }}">
+
+        {% partial 'tracking/gtag-body' %}
+       	{{ sitemap.body_code|raw }}
+
+        <div class="site-wrapper">
+
+          <header id="layout-header" class="c-StickyBar site-header sticky top-0 left-0 right-0 z-50">
+            {% partial 'layout/header' %}
+          </header>
+
+          <main id="layout-page" class="site-content">
+              {% page %}
+          </main>
+
+          <footer id="layout-footer" class="site-footer">
+            {% partial 'layout/footer' %}
+          </footer>
+
+        </div>
+
+        {% partial 'layout/mobile-menu' %}
+
+        {% partial 'foot' %}
+
+        <!-- Cookie Bars -->
+        {% component 'cookiesBar' %}
+        {% component 'cookiesManage' %}
+
+    </body>
+</html>

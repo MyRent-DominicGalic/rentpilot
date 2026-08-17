@@ -1,0 +1,98 @@
+1787058110a:1:{s:11:"default.htm";a:15:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:1310:"description = "Default Layout for Page Entries & CMS Pages"
+title = "Default"
+
+[resources]
+
+[baseComponent]
+
+[global sitemap]
+handle = "Content\SEO\SiteMap"
+
+[global settings]
+handle = "Content\Settings"
+
+[global page_settings]
+handle = "Content\PageSettings"
+
+[section]
+handle = "Content\Page"
+
+[cookiesBar]
+
+[cookiesManage]
+==
+<!DOCTYPE html>
+<html lang="{{ this.site.code }}">
+    <head>
+
+        {% partial 'head' %}
+
+    </head>
+    <body class="layout-{{ this.page.layout }} page-{{ this.page.id }} page-{{ section.slug }}">
+
+        {% partial 'tracking/gtag-body' %}
+       	{{ sitemap.body_code|raw }}
+
+        <div class="site-wrapper">
+
+          <header id="layout-header" class="c-StickyBar site-header sticky top-0 left-0 right-0 z-50">
+            {% partial 'layout/header' %}
+          </header>
+
+          <main id="layout-page" class="site-content">
+              {% page %}
+          </main>
+
+          <footer id="layout-footer" class="site-footer">
+            {% partial 'layout/footer' %}
+          </footer>
+
+        </div>
+
+        {% partial 'layout/mobile-menu' %}
+
+        {% partial 'foot' %}
+
+        <!-- Cookie Bars -->
+        {% component 'cookiesBar' %}
+        {% component 'cookiesManage' %}
+
+    </body>
+</html>";s:5:"mtime";i:1778867853;s:6:"markup";s:958:"<!DOCTYPE html>
+<html lang="{{ this.site.code }}">
+    <head>
+
+        {% partial 'head' %}
+
+    </head>
+    <body class="layout-{{ this.page.layout }} page-{{ this.page.id }} page-{{ section.slug }}">
+
+        {% partial 'tracking/gtag-body' %}
+       	{{ sitemap.body_code|raw }}
+
+        <div class="site-wrapper">
+
+          <header id="layout-header" class="c-StickyBar site-header sticky top-0 left-0 right-0 z-50">
+            {% partial 'layout/header' %}
+          </header>
+
+          <main id="layout-page" class="site-content">
+              {% page %}
+          </main>
+
+          <footer id="layout-footer" class="site-footer">
+            {% partial 'layout/footer' %}
+          </footer>
+
+        </div>
+
+        {% partial 'layout/mobile-menu' %}
+
+        {% partial 'foot' %}
+
+        <!-- Cookie Bars -->
+        {% component 'cookiesBar' %}
+        {% component 'cookiesManage' %}
+
+    </body>
+</html>";s:4:"code";N;s:11:"description";s:43:"Default Layout for Page Entries & CMS Pages";s:5:"title";s:7:"Default";s:9:"resources";a:0:{}s:13:"baseComponent";a:0:{}s:14:"global sitemap";a:1:{s:6:"handle";s:19:"Content\SEO\SiteMap";}s:15:"global settings";a:1:{s:6:"handle";s:16:"Content\Settings";}s:20:"global page_settings";a:1:{s:6:"handle";s:20:"Content\PageSettings";}s:7:"section";a:1:{s:6:"handle";s:12:"Content\Page";}s:10:"cookiesBar";a:0:{}s:13:"cookiesManage";a:0:{}}}

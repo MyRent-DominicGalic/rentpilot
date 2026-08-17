@@ -1,0 +1,51 @@
+<section class="bg-secondary bg-opacity-5">
+    <div class="container px-4 mx-auto py-12 lg:py-16">
+        <div class="max-w-2xl mx-auto text-center">
+            <div class="text-sm uppercase font-bold mb-4">Paketi</div>
+            <h2 class="mb-6"><span class="text-secondary">Optimizirajte iznajmljivanje</span> s vodećim PMS software-om</h2>
+            <p class="font-medium text-gray max-w-lg mx-auto mb-12">Odaberite pravu razinu za svoje poslovanje.</p>
+        </div>
+        <div class="flex justify-center overflow-x-auto pb-0.5">
+
+            {# Active ---> class="text-primary font-bold relative before:content-[''] before:absolute before:-bottom-0.5 before:left-0 before:right-0 before:bg-secondary before:h-1"  #} 
+            <button class="text-lg px-8 py-2 border-b border-silver font-medium whitespace-nowrap text-primary font-bold relative before:content-[''] before:absolute before:-bottom-0.5 before:left-0 before:right-0 before:bg-secondary before:h-1" type="button">Osnovni paketi</button>
+            <button class="text-lg px-8 py-2 border-b border-silver font-medium whitespace-nowrap" type="button">Paketi po tipu poduzeća</button>
+            <button class="text-lg px-8 py-2 border-b border-silver font-medium whitespace-nowrap" type="button">Web stranice</button>
+
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 pt-12">
+
+            {% for i in 3..0 %}
+            <form class="flex flex-col gap-4 bg-white border border-silver border-opacity-50 rounded-2xl px-4 py-6" action="#" method="get">
+                <div class="text-lg lg:text-xl font-bold">Privatni iznajmljivači</div>
+                <select class="px-4 py-2 border border-silver rounded-lg text-gray-dark font-medium" id="#">
+                    {% for i in 0..4 %}
+                    <option value="">1-10 objekata</option>
+                    {% endfor %}
+                </select>
+                <div class="flex items-end gap-2">
+                    <h3 class="text-gray-dark">€10</h3>
+                    <div class="text-gray font-medium text-sm">/objektu /mjesečno</div>
+                </div>
+                <div class="border-b border-silver"></div>
+                <ul class="flex flex-col gap-3">
+                    <li class="flex items-start gap-3"><img class="mt-1" width="20" height="25" src="/assets/icons/check-circle-broken.svg" alt="icon" /><p class="text-sm">Neograničen pristup MyRent <span class="text-secondary">channel manager</span> &  <span class="text-secondary">property management</span> aplikaciji</p></li>
+                    <li class="flex items-start gap-3"><img class="mt-1" width="20" height="25" src="/assets/icons/check-circle-broken.svg" alt="icon" /><p class="text-sm">Besplatna edukacija o MyRentovoj aplikaciji i svim njenim funkcijama</p></li>
+                    <li class="flex items-start gap-3"><img class="mt-1" width="20" height="25" src="/assets/icons/check-circle-broken.svg" alt="icon" /><p class="text-sm">Dostupnost MyRentove tehničke podrške tijekom radnih sati (09:00-17:00)</p></li>
+                    <li class="flex items-start gap-3"><img class="mt-1" width="20" height="25" src="/assets/icons/check-circle-broken.svg" alt="icon" /><p class="text-sm">Besplatan <span class="text-secondary">portal</span> za Vaše goste</p></li>
+                    <li class="flex items-start gap-3"><img class="mt-1" width="20" height="25" src="/assets/icons/check-circle-broken.svg" alt="icon" /><p class="text-sm">Besplatan <span class="text-secondary">booking engine</span> za web stranicu</p></li>
+                    <li class="flex items-start gap-3"><img class="mt-1" width="20" height="25" src="/assets/icons/check-circle-broken.svg" alt="icon" /><p class="text-sm">Besplatnu integraciju za Online plaćanje</p></li>
+                    <li class="flex items-start gap-3"><img class="mt-1" width="20" height="25" src="/assets/icons/check-circle-broken.svg" alt="icon" /><p class="text-sm">Besplatni sustav za <span class="text-secondary">automatizirano</span> slanje emailova</p></li>
+                    <li class="flex items-start gap-3"><img class="mt-1" width="20" height="25" src="/assets/icons/check-circle-broken.svg" alt="icon" /><p class="text-sm">Najbolju kavu i rakiju u gradu </p></li>
+                </ul>
+                <div>
+                    <button class="border border-primary text-primary rounded-full transition ease-out duration-300 px-5 py-2.5 font-bold mr-2 hover:bg-primary hover:text-white" type="submit">Odaberi</button>
+                </div>
+            </form>
+            {% endfor %}
+
+        </div>
+
+    </div>
+</section>

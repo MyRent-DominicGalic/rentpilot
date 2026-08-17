@@ -1,0 +1,1 @@
+1751535992a:1:{s:7:"columns";a:3:{s:11:"server_name";a:2:{s:5:"label";s:4:"Name";s:10:"searchable";b:1;}s:12:"endpoint_url";a:2:{s:5:"label";s:3:"URL";s:10:"searchable";b:1;}s:11:"status_code";a:2:{s:5:"label";s:6:"Status";s:11:"displayFrom";s:12:"status_label";}}}

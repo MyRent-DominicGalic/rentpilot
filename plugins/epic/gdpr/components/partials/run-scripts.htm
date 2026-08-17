@@ -1,0 +1,31 @@
+{% if cookiesSettingsGet('cookies',null)|length %}
+
+    {% for cookie in cookiesSettingsGet('cookies') %}
+
+        {% for script in cookie.scripts %}
+
+          {% if script.scripts_disable == 0 %}
+
+                    {% if cookie.required or epicCookies[cookie.slug] %}
+
+                        {% if script.scripts_code %}
+
+                                {{ script.scripts_code|raw }}
+
+                        {% endif %}
+
+                        {% if script.scripts_file %}
+
+                                <script src="{{ script.scripts_file|media }}"></script>
+
+                        {% endif %}
+
+                    {% endif %}
+
+            {% endif %}
+
+        {% endfor %}
+
+    {% endfor %}
+
+{% endif %}

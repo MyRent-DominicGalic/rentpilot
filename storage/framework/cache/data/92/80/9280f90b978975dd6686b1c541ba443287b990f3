@@ -1,0 +1,247 @@
+1763717847a:1:{s:35:"builder/sections/content_slider.htm";a:5:{s:8:"fileName";s:35:"builder/sections/content_slider.htm";s:7:"content";s:6648:"<{{ section.html_tag }} id="{{ section.html_anchor }}" class="{{ section.css_classes |join(' ') }}">
+
+  <div class="{{ section.container_style }}">
+
+    <div class="grid grid-cols-11 pt-2 lg:pt-24">
+
+        {% for key, item in section.slides %}
+
+          {% if loop.first %}
+          <a href="#slide-{{ key }}" class="text-center relative block js-switch-slide">
+              {# Active circle #}
+              <div class="absolute z-10 -top-2 left-1/2 transform -translate-x-1/2 bg-secondary w-9 h-9 rounded-full flex items-center justify-center">
+                <div class="bg-white w-4 h-4 rounded-full"></div>
+              </div>
+              {# End - active circle #}
+              <div class="relative flex justify-center after:content-[''] after:absolute after:top-1/2 transform after:-translate-y-1/2 after:left-1/2 after:right-0 after:bg-secondary after:bg-opacity-10 after:h-3 before:content-[''] before:top-0 before:left-1/2 before:border before:border-secondary before:bg-white before:z-10 before:rounded-full before:w-5 before:h-5">
+              </div>
+
+              {# Active class="font-bold text-primary" #}
+              <div class="font-bold text-primary font-medium mx-auto max-w-32 w-full lg:w-auto py-5">{{ item.title }}</div>
+          </a>
+          {% elseif loop.last %}
+           {% if key is odd %}
+             <a href="#slide-{{ key }}" class="text-center relative block js-switch-slide">
+                 <div class="relative flex justify-center transform after:content-[''] after:absolute after:top-1/2 after:-translate-y-1/2 after:left-0 after:right-1/2 after:bg-secondary after:bg-opacity-10 after:h-3 before:content-[''] before:top-0 before:left-1/2 before:border before:border-secondary before:bg-white before:z-10 before:rounded-full before:w-5 before:h-5"></div>
+                 <div class="font-medium w-32 lg:w-auto py-5 absolute transform top-0 -translate-y-full">{{ item.title }}</div>
+             </a>
+           {% else %}
+             <a href="#slide-{{ key }}" class="text-center relative block js-switch-slide">
+                 <div class="relative flex justify-center transform after:content-[''] after:absolute after:top-1/2 after:-translate-y-1/2 after:left-0 after:right-1/2 after:bg-secondary after:bg-opacity-10 after:h-3 before:content-[''] before:top-0 before:left-1/2 before:border before:border-secondary before:bg-white before:z-10 before:rounded-full before:w-5 before:h-5"></div>
+                 <div class="font-medium w-32 lg:w-auto py-5">{{ item.title }}</div>
+             </a>
+           {% endif %}
+          {% else %}
+            {% if key is odd %}
+              <a href="#slide-{{ key }}" class="text-center relative block js-switch-slide">
+                  <div class="relative flex justify-center after:content-[''] after:absolute after:top-1/2 transform after:-translate-y-1/2 after:left-0 after:right-0 after:bg-secondary after:bg-opacity-10 after:h-3 before:content-[''] before:top-0 before:left-1/2 before:border before:border-secondary before:bg-white before:z-10 before:rounded-full before:w-5 before:h-5"></div>
+                  <div class="absolute bottom-full lg:w-28 h-20">
+                      <div class="relative">
+                          <div class="mx-auto max-w-32 w-full lg:w-auto lg:absolute lg:h-20 lg:top-0 lg:left-1/2 lg:-translate-x-1/2 font-medium pt-3 pb-12 lg:pb-4 transform">{{ item.title }}</div>
+                      </div>
+                  </div>
+              </a>
+            {% else %}
+            <a href="#slide-{{ key }}" class="text-center relative block js-switch-slide">
+                <div class="relative flex justify-center after:content-[''] after:absolute after:top-1/2 transform after:-translate-y-1/2 after:left-0 after:right-0 after:bg-secondary after:bg-opacity-10 after:h-3 before:content-[''] before:top-0 before:left-1/2 before:border before:border-secondary before:bg-white before:z-10 before:rounded-full before:w-5 before:h-5"></div>
+                <div class="font-medium mx-auto max-w-32 w-full lg:w-auto py-5">Rezervacije i kalendar</div>
+            </a>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+
+    </div>
+
+    <div class="gap-6 pb-8">
+
+        {% for key, item in section.slides %}
+        <article id="slide-{{ key }}" class="js-slide w-full lg:py-12 py-8 flex gap-8 md:gap-32 justify-between {{ key == 0 ? '' : 'hidden' }}">
+                <div class="md:w-1/2 w-full">
+                    <h3 class="mb-4">{{ item.title }}</h3>
+                    <p class="font-medium text-gray-dark mb-4">
+                      {{ item.content | content }}
+                    </p>
+                    {% if item.button_page %}
+                    <a href="{{ item.button_page | page }}" {{ item.button_external ? 'target="_blank" rel="noopener"' }} class="inline-block text-sm mt-3 lg:text-base bg-primary text-silver-light transition ease-out duration-300 rounded-full px-4 lg:px-5 py-2 lg:py-2.5 font-bold hover:bg-secondary">
+                        {{ item.button_title }}
+                    </a>
+                    {% endif %}
+                </div>
+                <img class="md:w-1/2 w-full h-auto lg:ml-auto" src="{{ item.image | media }}" loading="lazy" alt="{{ item.image | replace({ '_' : ' ', '/site-images/' : '', '.webp' : '' }) }}"  />
+        </article>
+        {% endfor %}
+
+    </div>
+
+  </div>
+
+</{{ section.html_tag }}>
+
+{% put scripts %}
+<!-- TODO:  switch slides on click -->
+<script type="text/javascript">
+  /*
+  Click on .js-switch-slide takes href attribute and shows .js-slide with ID attribute matching href atribute
+  */
+
+  console.log("page is fully loaded");
+
+  window.addEventListener("load", (event) => {
+        console.log("page is fully loaded");
+    });
+
+
+     document.addEventListener('DOMContentLoaded', function () {
+
+        const slider = document.querySelector('.js-slider-overflow');
+        const prevButton = document.querySelector('.js-goto-prev-slide');
+        const nextButton = document.querySelector('.js-goto-next-slide');
+        const scrollAmount = 300; // Adjust scroll amount as needed
+
+        // Scroll to the left
+        prevButton.addEventListener('click', function () {
+
+            console.log('prevButton');
+
+          slider.scrollBy({
+            left: -scrollAmount,
+            behavior: 'smooth',
+          });
+        });
+
+        // Scroll to the right
+        nextButton.addEventListener('click', function () {
+            console.log('nextButton');
+
+          slider.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth',
+          });
+        });
+    });
+
+</script>
+{% endput %}";s:5:"mtime";i:1763630250;s:6:"markup";s:6648:"<{{ section.html_tag }} id="{{ section.html_anchor }}" class="{{ section.css_classes |join(' ') }}">
+
+  <div class="{{ section.container_style }}">
+
+    <div class="grid grid-cols-11 pt-2 lg:pt-24">
+
+        {% for key, item in section.slides %}
+
+          {% if loop.first %}
+          <a href="#slide-{{ key }}" class="text-center relative block js-switch-slide">
+              {# Active circle #}
+              <div class="absolute z-10 -top-2 left-1/2 transform -translate-x-1/2 bg-secondary w-9 h-9 rounded-full flex items-center justify-center">
+                <div class="bg-white w-4 h-4 rounded-full"></div>
+              </div>
+              {# End - active circle #}
+              <div class="relative flex justify-center after:content-[''] after:absolute after:top-1/2 transform after:-translate-y-1/2 after:left-1/2 after:right-0 after:bg-secondary after:bg-opacity-10 after:h-3 before:content-[''] before:top-0 before:left-1/2 before:border before:border-secondary before:bg-white before:z-10 before:rounded-full before:w-5 before:h-5">
+              </div>
+
+              {# Active class="font-bold text-primary" #}
+              <div class="font-bold text-primary font-medium mx-auto max-w-32 w-full lg:w-auto py-5">{{ item.title }}</div>
+          </a>
+          {% elseif loop.last %}
+           {% if key is odd %}
+             <a href="#slide-{{ key }}" class="text-center relative block js-switch-slide">
+                 <div class="relative flex justify-center transform after:content-[''] after:absolute after:top-1/2 after:-translate-y-1/2 after:left-0 after:right-1/2 after:bg-secondary after:bg-opacity-10 after:h-3 before:content-[''] before:top-0 before:left-1/2 before:border before:border-secondary before:bg-white before:z-10 before:rounded-full before:w-5 before:h-5"></div>
+                 <div class="font-medium w-32 lg:w-auto py-5 absolute transform top-0 -translate-y-full">{{ item.title }}</div>
+             </a>
+           {% else %}
+             <a href="#slide-{{ key }}" class="text-center relative block js-switch-slide">
+                 <div class="relative flex justify-center transform after:content-[''] after:absolute after:top-1/2 after:-translate-y-1/2 after:left-0 after:right-1/2 after:bg-secondary after:bg-opacity-10 after:h-3 before:content-[''] before:top-0 before:left-1/2 before:border before:border-secondary before:bg-white before:z-10 before:rounded-full before:w-5 before:h-5"></div>
+                 <div class="font-medium w-32 lg:w-auto py-5">{{ item.title }}</div>
+             </a>
+           {% endif %}
+          {% else %}
+            {% if key is odd %}
+              <a href="#slide-{{ key }}" class="text-center relative block js-switch-slide">
+                  <div class="relative flex justify-center after:content-[''] after:absolute after:top-1/2 transform after:-translate-y-1/2 after:left-0 after:right-0 after:bg-secondary after:bg-opacity-10 after:h-3 before:content-[''] before:top-0 before:left-1/2 before:border before:border-secondary before:bg-white before:z-10 before:rounded-full before:w-5 before:h-5"></div>
+                  <div class="absolute bottom-full lg:w-28 h-20">
+                      <div class="relative">
+                          <div class="mx-auto max-w-32 w-full lg:w-auto lg:absolute lg:h-20 lg:top-0 lg:left-1/2 lg:-translate-x-1/2 font-medium pt-3 pb-12 lg:pb-4 transform">{{ item.title }}</div>
+                      </div>
+                  </div>
+              </a>
+            {% else %}
+            <a href="#slide-{{ key }}" class="text-center relative block js-switch-slide">
+                <div class="relative flex justify-center after:content-[''] after:absolute after:top-1/2 transform after:-translate-y-1/2 after:left-0 after:right-0 after:bg-secondary after:bg-opacity-10 after:h-3 before:content-[''] before:top-0 before:left-1/2 before:border before:border-secondary before:bg-white before:z-10 before:rounded-full before:w-5 before:h-5"></div>
+                <div class="font-medium mx-auto max-w-32 w-full lg:w-auto py-5">Rezervacije i kalendar</div>
+            </a>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+
+    </div>
+
+    <div class="gap-6 pb-8">
+
+        {% for key, item in section.slides %}
+        <article id="slide-{{ key }}" class="js-slide w-full lg:py-12 py-8 flex gap-8 md:gap-32 justify-between {{ key == 0 ? '' : 'hidden' }}">
+                <div class="md:w-1/2 w-full">
+                    <h3 class="mb-4">{{ item.title }}</h3>
+                    <p class="font-medium text-gray-dark mb-4">
+                      {{ item.content | content }}
+                    </p>
+                    {% if item.button_page %}
+                    <a href="{{ item.button_page | page }}" {{ item.button_external ? 'target="_blank" rel="noopener"' }} class="inline-block text-sm mt-3 lg:text-base bg-primary text-silver-light transition ease-out duration-300 rounded-full px-4 lg:px-5 py-2 lg:py-2.5 font-bold hover:bg-secondary">
+                        {{ item.button_title }}
+                    </a>
+                    {% endif %}
+                </div>
+                <img class="md:w-1/2 w-full h-auto lg:ml-auto" src="{{ item.image | media }}" loading="lazy" alt="{{ item.image | replace({ '_' : ' ', '/site-images/' : '', '.webp' : '' }) }}"  />
+        </article>
+        {% endfor %}
+
+    </div>
+
+  </div>
+
+</{{ section.html_tag }}>
+
+{% put scripts %}
+<!-- TODO:  switch slides on click -->
+<script type="text/javascript">
+  /*
+  Click on .js-switch-slide takes href attribute and shows .js-slide with ID attribute matching href atribute
+  */
+
+  console.log("page is fully loaded");
+
+  window.addEventListener("load", (event) => {
+        console.log("page is fully loaded");
+    });
+
+
+     document.addEventListener('DOMContentLoaded', function () {
+
+        const slider = document.querySelector('.js-slider-overflow');
+        const prevButton = document.querySelector('.js-goto-prev-slide');
+        const nextButton = document.querySelector('.js-goto-next-slide');
+        const scrollAmount = 300; // Adjust scroll amount as needed
+
+        // Scroll to the left
+        prevButton.addEventListener('click', function () {
+
+            console.log('prevButton');
+
+          slider.scrollBy({
+            left: -scrollAmount,
+            behavior: 'smooth',
+          });
+        });
+
+        // Scroll to the right
+        nextButton.addEventListener('click', function () {
+            console.log('nextButton');
+
+          slider.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth',
+          });
+        });
+    });
+
+</script>
+{% endput %}";s:4:"code";N;}}

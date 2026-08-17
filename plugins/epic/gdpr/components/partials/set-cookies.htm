@@ -1,0 +1,68 @@
+var date = new Date();
+
+date.setFullYear(date.getFullYear() + {{ cookiesSettingsGet('set_cookies_lifetime_days') ? cookiesSettingsGet('set_cookies_lifetime_days') : 365 }});
+
+document.cookie = "{{ 'epic-cookies-consent=1; path=/; expires='}}" + date.toGMTString();
+
+function grantAll()
+{
+  gtag('consent', 'update', {
+    'ad_storage': 'granted',
+    'ad_user_data': 'granted',
+    'ad_personalization': 'granted',
+    'analytics_storage': 'granted'
+  });
+}
+
+function grantAds()
+{
+  gtag('consent', 'update', {
+    'ad_storage': 'granted',
+    'ad_user_data': 'granted',
+    'ad_personalization': 'granted',
+  });
+}
+
+function grantAnalytics()
+{
+  gtag('consent', 'update', {
+    'analytics_storage': 'granted'
+  });
+}
+
+{% if cookiesSettingsGet('cookies',null)|length %}
+
+    {% if setOnlyManageCookies %}
+
+    {% for cookie in cookiesSettingsGet('cookies') %}
+
+            var item = document.getElementById('epic-cookies-{{cookie.slug}}{{customId}}');
+
+            if( item.checked == true ) {
+                document.cookie = 'epic-cookies-{{cookie.slug}}=1; path=/; expires=' + date.toGMTString();
+
+                {% if cookie.slug == 'analytics' %}
+                //  grantAnalytics();
+                {% endif %}
+
+                {% if cookie.slug == 'ads' %}
+                //  grantAds();
+                {% endif %}
+
+            } else {
+                document.cookie = 'epic-cookies-{{cookie.slug}}=0; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+            }
+
+    {% endfor %}
+
+    {% else %}
+      {% for cookie in cookiesSettingsGet('cookies') %}
+        document.cookie = "{{ 'epic-cookies-'~( cookie.slug ? cookie.slug : loop.index)~'=1; path=/; expires='}}" + date.toGMTString();
+      {% endfor %}
+      //  grantAll();
+    {% endif %}
+
+{% endif %}
+
+document.querySelector('.c-CookiesBar').style.display = "none";
+document.querySelector('#js--CookiesModal').style.display = "none";

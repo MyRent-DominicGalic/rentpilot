@@ -1,0 +1,71 @@
+1763716671a:1:{s:25:"builder/sections/hero.htm";a:5:{s:8:"fileName";s:25:"builder/sections/hero.htm";s:7:"content";s:1976:"<{{ section.html_tag }} id="{{ section.html_anchor }}" class="{{ section.css_classes |join(' ') }}">
+
+    <div class="relative">
+
+        <div class="absolute top-0 left-0 w-full h-full">
+            <img class="w-full h-full object-cover" src="{{ section.image | media }}" fetchpriority="high" alt="{{ section.image | replace({ '_' : ' ', '/site-images/' : '', '.webp' : '' }) }}" title="{{ section.title | replace({ '<em>' : '', '</em>' : '' }) | raw }} {{ section.image | replace({ '-' : ' ', '_' : ' ', '/site-images/' : '', '.webp' : '' }) }} " />
+        </div>
+
+        <div class="absolute top-0 left-0 w-full h-full bg-teal mix-blend-multiply"></div>
+        <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-60 mix-blend-multiply"></div>
+
+        <div class="{{ section.container_style }} px-4 max-w-4xl mx-auto {{ section.html_anchor == 'home-hero' ? 'pt-24 pb-44' : 'pt-36 pb-28' }} text-center text-white relative">
+            {% if section.above_title %}
+            <div class="text-sm font-bold uppercase mb-3 tracking-wider">
+              {{ section.above_title | raw }}
+            </div>
+            {% endif %}
+            <{{ section.title_html_tag ?? 'h1' }} class="text-h1 mb-6">
+              {{ section.title | raw }}
+            </{{ section.title_html_tag ?? 'h1' }}>
+            <p class="text-lg lg:text-xl font-medium mb-12 md:px-24">
+              {{ section.content | raw  }}
+            </p>
+            {% if section.button_page %}
+            <div class="inline-block bg-white rounded-full">
+                <a href="{{ section.button_page | link }}" {{ section.button_external ? 'target="_blank" rel="noopener"' }} class="block font-bold bg-secondary bg-opacity-5 text-primary transition ease-out duration-300 hover:bg-opacity-20 rounded-full px-5 py-2.5">
+                  {{ section.button_title }}
+                </a>
+            </div>
+            {% endif %}
+        </div>
+
+
+    </div>
+
+</{{ section.html_tag }}>";s:5:"mtime";i:1763630250;s:6:"markup";s:1976:"<{{ section.html_tag }} id="{{ section.html_anchor }}" class="{{ section.css_classes |join(' ') }}">
+
+    <div class="relative">
+
+        <div class="absolute top-0 left-0 w-full h-full">
+            <img class="w-full h-full object-cover" src="{{ section.image | media }}" fetchpriority="high" alt="{{ section.image | replace({ '_' : ' ', '/site-images/' : '', '.webp' : '' }) }}" title="{{ section.title | replace({ '<em>' : '', '</em>' : '' }) | raw }} {{ section.image | replace({ '-' : ' ', '_' : ' ', '/site-images/' : '', '.webp' : '' }) }} " />
+        </div>
+
+        <div class="absolute top-0 left-0 w-full h-full bg-teal mix-blend-multiply"></div>
+        <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-60 mix-blend-multiply"></div>
+
+        <div class="{{ section.container_style }} px-4 max-w-4xl mx-auto {{ section.html_anchor == 'home-hero' ? 'pt-24 pb-44' : 'pt-36 pb-28' }} text-center text-white relative">
+            {% if section.above_title %}
+            <div class="text-sm font-bold uppercase mb-3 tracking-wider">
+              {{ section.above_title | raw }}
+            </div>
+            {% endif %}
+            <{{ section.title_html_tag ?? 'h1' }} class="text-h1 mb-6">
+              {{ section.title | raw }}
+            </{{ section.title_html_tag ?? 'h1' }}>
+            <p class="text-lg lg:text-xl font-medium mb-12 md:px-24">
+              {{ section.content | raw  }}
+            </p>
+            {% if section.button_page %}
+            <div class="inline-block bg-white rounded-full">
+                <a href="{{ section.button_page | link }}" {{ section.button_external ? 'target="_blank" rel="noopener"' }} class="block font-bold bg-secondary bg-opacity-5 text-primary transition ease-out duration-300 hover:bg-opacity-20 rounded-full px-5 py-2.5">
+                  {{ section.button_title }}
+                </a>
+            </div>
+            {% endif %}
+        </div>
+
+
+    </div>
+
+</{{ section.html_tag }}>";s:4:"code";N;}}

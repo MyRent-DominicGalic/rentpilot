@@ -1,0 +1,22 @@
+1763716651a:1:{s:15:"site/styles.htm";a:5:{s:8:"fileName";s:15:"site/styles.htm";s:7:"content";s:242:"  <link passive href="{{ [
+    '@framework.extras',
+    'assets/base.css',
+    'assets/app.css'
+    ] | theme }}" rel="stylesheet">
+
+    <link passive href="{{
+      'assets/utilities.css'
+       | theme }}" rel="stylesheet">
+
+  {% styles %}
+";s:5:"mtime";i:1763630250;s:6:"markup";s:239:"<link passive href="{{ [
+    '@framework.extras',
+    'assets/base.css',
+    'assets/app.css'
+    ] | theme }}" rel="stylesheet">
+
+    <link passive href="{{
+      'assets/utilities.css'
+       | theme }}" rel="stylesheet">
+
+  {% styles %}";s:4:"code";N;}}

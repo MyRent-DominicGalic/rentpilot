@@ -1,0 +1,6 @@
+{% if not epicCookies.consent %}
+    {% partial __SELF__ ~ '::cookiesbar' %}
+    {% partial '@modal-scripts' %}
+{% endif %}
+
+{% partial '@run-scripts' %}

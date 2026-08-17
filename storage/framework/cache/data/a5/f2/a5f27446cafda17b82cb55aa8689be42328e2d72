@@ -1,0 +1,156 @@
+1787058110a:1:{s:11:"article.htm";a:11:{s:8:"fileName";s:11:"article.htm";s:7:"content";s:3073:"url = "/baza-znanja/:slug"
+layout = "default"
+title = "Article"
+
+[viewBag]
+localeUrl[en] = "knowledge-base/:slug"
+localeUrl[hr] = "baza-znanja/:slug"
+localeUrl[si] = "baza-znanja/:slug"
+localeUrl[fr] = "base-de-connaissances/:slug"
+localeUrl[es] = "base-de-conocimientos/:slug"
+localeUrl[it] = "base-di-conoscenza/:slug"
+localeUrl[de] = "wissensdatenbank/:slug"
+
+[section]
+handle = "Knowledge\Article"
+value = "{{ :slug }}"
+
+[formComponent]
+==
+{% set post = section %}
+
+<section class="c-BlogPost container max-w-4xl mx-auto px-4 pt-10 pb-24">
+    <div class="max-w-3xl w-full mx-auto text-center">
+        <h1 class="text-h2 mb-5"> {{ post.title | raw }} </h1>
+        {% if post.featured_text %}
+        <p class="rich-em font-medium text-lg text-gray-dark mb-5">
+          {{ post.featured_text | raw }}
+        </p>
+        {% endif %}
+        <div class="flex flex-col md:flex-row items-center justify-center gap-4 mb-10">
+            <div class="flex items-center gap-2">
+                <img width="20" height="20" src="{{ 'assets/icons/calendar.svg'| theme }}" alt="Icon calendar" />
+                <div class="text-gray-dark font-medium">{{ post.published_at_date | date('d/m/Y') }}</div>
+            </div>
+            <div class="hidden md:block text-gray-light font-bold">•</div>
+            <div class="flex items-center gap-2">
+                <div>Share</div>
+                {% partial 'components/share' item = post %}
+            </div>
+        </div>
+    </div>
+    
+    <div class="px-6 sm:px-0">
+        <img class="w-full h-52 sm:h-72 md:h-96 object-cover rounded-lg" src="{{ post.banner ? post.banner | media : 'assets/images/no-image.png' | theme }}" alt="{{ post.banner ? post.banner | split('/') | last | replace({ '_' : ' ', '/site-images/' : '', '.webp' : '', '.jpg' : '', '.png' : '' }) : 'assets/images/no-image.png' | theme }}" fetchpriority="high" />
+    </div>
+
+    <div class="border-t border-silver w-full my-5 lg:my-10"></div>
+
+    <div class="my-16 articleText max-w-4xl mx-auto">
+      {% if post.content_group == 'regular_article' %}
+        {{ post.content|content }}
+      {% else %}
+      <div class="">
+        {% for section in post.builder %}
+            {% partial 'builder/content/' ~ section.content_group section=section %}
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+
+      {% partial 'tailor_modules/form' code = 'trebate-vise-informacija' class='p-5 lg:p-10 rounded-lg max-w-2xl mx-auto' %}
+
+    {# Social #}
+    <div class="flex items-center justify-center gap-2 mb-16 -mt-16">
+        <div>Share</div>
+        {% partial 'components/share' item = post %}
+    </div>
+
+</section>
+
+<section class="c-Blogs py-12">
+  <div class="container">
+
+    <h2 class="mb-4">
+      Zadnji članci
+    </h2>
+
+    {% set blog_section = {
+        'limit': 3,
+        'show_category_nav': true,
+        'reverse_order': true
+      }
+    %}
+
+    {% partial 'builder/sections/articles' section = blog_section %}
+
+  </div>
+</section>";s:5:"mtime";i:1778867853;s:6:"markup";s:2610:"{% set post = section %}
+
+<section class="c-BlogPost container max-w-4xl mx-auto px-4 pt-10 pb-24">
+    <div class="max-w-3xl w-full mx-auto text-center">
+        <h1 class="text-h2 mb-5"> {{ post.title | raw }} </h1>
+        {% if post.featured_text %}
+        <p class="rich-em font-medium text-lg text-gray-dark mb-5">
+          {{ post.featured_text | raw }}
+        </p>
+        {% endif %}
+        <div class="flex flex-col md:flex-row items-center justify-center gap-4 mb-10">
+            <div class="flex items-center gap-2">
+                <img width="20" height="20" src="{{ 'assets/icons/calendar.svg'| theme }}" alt="Icon calendar" />
+                <div class="text-gray-dark font-medium">{{ post.published_at_date | date('d/m/Y') }}</div>
+            </div>
+            <div class="hidden md:block text-gray-light font-bold">•</div>
+            <div class="flex items-center gap-2">
+                <div>Share</div>
+                {% partial 'components/share' item = post %}
+            </div>
+        </div>
+    </div>
+    
+    <div class="px-6 sm:px-0">
+        <img class="w-full h-52 sm:h-72 md:h-96 object-cover rounded-lg" src="{{ post.banner ? post.banner | media : 'assets/images/no-image.png' | theme }}" alt="{{ post.banner ? post.banner | split('/') | last | replace({ '_' : ' ', '/site-images/' : '', '.webp' : '', '.jpg' : '', '.png' : '' }) : 'assets/images/no-image.png' | theme }}" fetchpriority="high" />
+    </div>
+
+    <div class="border-t border-silver w-full my-5 lg:my-10"></div>
+
+    <div class="my-16 articleText max-w-4xl mx-auto">
+      {% if post.content_group == 'regular_article' %}
+        {{ post.content|content }}
+      {% else %}
+      <div class="">
+        {% for section in post.builder %}
+            {% partial 'builder/content/' ~ section.content_group section=section %}
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+
+      {% partial 'tailor_modules/form' code = 'trebate-vise-informacija' class='p-5 lg:p-10 rounded-lg max-w-2xl mx-auto' %}
+
+    {# Social #}
+    <div class="flex items-center justify-center gap-2 mb-16 -mt-16">
+        <div>Share</div>
+        {% partial 'components/share' item = post %}
+    </div>
+
+</section>
+
+<section class="c-Blogs py-12">
+  <div class="container">
+
+    <h2 class="mb-4">
+      Zadnji članci
+    </h2>
+
+    {% set blog_section = {
+        'limit': 3,
+        'show_category_nav': true,
+        'reverse_order': true
+      }
+    %}
+
+    {% partial 'builder/sections/articles' section = blog_section %}
+
+  </div>
+</section>";s:4:"code";N;s:3:"url";s:18:"/baza-znanja/:slug";s:6:"layout";s:7:"default";s:5:"title";s:7:"Article";s:7:"viewBag";a:1:{s:9:"localeUrl";a:7:{s:2:"en";s:20:"knowledge-base/:slug";s:2:"hr";s:17:"baza-znanja/:slug";s:2:"si";s:17:"baza-znanja/:slug";s:2:"fr";s:27:"base-de-connaissances/:slug";s:2:"es";s:27:"base-de-conocimientos/:slug";s:2:"it";s:24:"base-di-conoscenza/:slug";s:2:"de";s:22:"wissensdatenbank/:slug";}}s:7:"section";a:2:{s:6:"handle";s:17:"Knowledge\Article";s:5:"value";s:11:"{{ :slug }}";}s:13:"formComponent";a:0:{}}}

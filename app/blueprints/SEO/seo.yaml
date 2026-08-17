@@ -1,0 +1,21 @@
+uuid: b5884275-919c-4496-8fb6-4f8e820c7c47
+handle: Content\SEO
+type: global
+name: SEO
+multisite: true
+
+primaryNavigation:
+    label: SEO
+    icon: icon-dashboard
+    order: 150
+
+navigation:
+    parent: Content\SEO
+    icon: icon-dashboard
+    order: 10
+
+fields:
+    website_name:
+        label: Placeholder
+        tab: General
+        translatable: true

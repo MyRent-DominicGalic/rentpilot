@@ -1,0 +1,57 @@
+<{{ section.html_tag }} id="{{ section.html_anchor }}" class="c-Video__wrap {{ section.css_classes |join(' ') }}">
+
+  <div class="{{ section.container_style }}">
+
+      <div class="c-Video__inner max-w-5xl mx-auto articleText">
+        {% if section.youtube_video %}
+        <iframe width="560"
+         height="315"
+         src="{{ section.youtube_video }}"
+         title="YouTube video player"
+         frameborder="0"
+         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+         loading="lazy"
+         allowfullscreen>
+       </iframe>
+        {% else %}
+        <video class="c-Video" playsinline="" loop="" preload="none" poster="{{ section.image | media }}">
+          <source src="{{ section.video | media }}" preload="none" type="video/mp4">
+        </video>
+        <div class="c-Video__caption">
+          <div class="c-Video__toggle">
+            <div class="text-white bg-black backdrop-blur-2xl	bg-opacity-70 rounded-full w-28 h-28 flex items-center justify-center">
+              <svg class="w-24 md:w-32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/>
+                <polygon points="172 128 108 88 108 168 172 128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        {% put scripts %}
+        <script type="text/javascript">
+
+          document.querySelectorAll('.c-Video').forEach(function(videoElement) {
+            
+            videoElement.parentElement.addEventListener('click', function() {
+
+                const video = this.querySelector('.c-Video');
+                const caption = this.querySelector('.c-Video__caption');
+
+                if (video.paused) {
+                    video.play();
+                    if (caption) caption.style.display = 'none';
+                } else {
+                    video.pause();
+                    if (caption) caption.style.display = '';
+                }
+            });
+        });
+
+          </script>
+        {% endput %}
+
+        {% endif %}
+      </div>
+
+  </div>
+  </{{ section.html_tag }}>

@@ -1,0 +1,3 @@
+1787058115a:1:{s:18:"site/recaptcha.htm";a:5:{s:8:"fileName";s:18:"site/recaptcha.htm";s:7:"content";s:201:"{# <script src="https://www.google.com/recaptcha/api.js?render={{ settings.recaptcha_site_key }}"></script> #}
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>";s:5:"mtime";i:1778867854;s:6:"markup";s:201:"{# <script src="https://www.google.com/recaptcha/api.js?render={{ settings.recaptcha_site_key }}"></script> #}
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>";s:4:"code";N;}}

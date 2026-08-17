@@ -1,0 +1,6 @@
+plugin:
+    name: 'Epic Base'
+    description: 'Epic Base Plugin'
+    author: Epic
+    icon: oc-icon-cog
+    homepage: ''

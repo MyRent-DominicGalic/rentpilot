@@ -1,0 +1,85 @@
+<section class="container px-4 pb-10">
+
+    <div class="grid grid-cols-12 gap-6">
+
+        <div class="order-2 lg:order-1 col-span-12 lg:col-span-7">
+        
+            <div class="border rounded-lg h-96 flex items-center justify-center mb-6">
+                Map
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                <div class="rounded-lg shadow-lg p-4">
+                    <div class="text-lg lg:text-xl font-bold mb-4">Sjedište</div>
+                    <ul class="flex flex-col gap-2 font-medium text-gray-dark">
+                        <li>J.P.Atelier d.o.o.</li>
+                        <li>Ul. Vjekoslava Klaića 14</li>
+                        <li>10000 Zagreb</li>
+                        <li>Hrvatska</li>
+                        <li>OIB: HR83933848262</li>
+                    </ul>
+                </div>
+
+                <div class="rounded-lg shadow-lg p-4">
+                    <div class="text-lg lg:text-xl font-bold mb-4">Uredi</div>
+                    <ul class="flex flex-col gap-2 font-medium text-gray-dark">
+                        <li>myRent d.o.o.</li>
+                        <li>Avenija Dubrovnik 15 (Paviljon 12)</li>
+                        <li>10000 Zagreb</li>
+                        <li>Hrvatska</li>
+                        <li>OIB: HR94577135640</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="order-1 lg:order-2 col-span-12 lg:col-span-5">
+
+            <form class="flex flex-col items-start gap-6 bg-secondary bg-opacity-5 rounded-lg px-4 lg:px-6 py-6" action="" method="">
+
+                <div class="text-lg lg:text-xl font-bold">Pošalji upit</div>
+
+                <div class="w-full">
+                    <label class="block text-sm font-bold mb-2">Ime i prezime</label>
+                    <input class="px-4 py-2 rounded-full bg-white placeholder-gray font-medium text-sm w-full" type="text" id="#" placeholder="Unesite ime i prezime" />
+                </div>
+
+                {# Error #}
+                <div class="w-full">
+                    <label class="block text-sm font-bold mb-2">Ime i prezime</label>
+                    <input class="px-4 py-2 rounded-full border border-red bg-white placeholder-gray font-medium text-sm w-full" type="text" id="#" placeholder="Unesite ime i prezime" />
+                    <small class="flex items-center gap-1 text-red pt-2"><img width="16" height="20" src="/assets/icons/alert.svg" alt="alert" />Molimo unesite valjanu email adresu.</small>
+                </div>
+
+                <div class="w-full">
+                    <label class="block text-sm font-bold mb-2">Email</label>
+                    <input class="px-4 py-2 rounded-full bg-white placeholder-gray font-medium text-sm w-full" type="email" id="#" placeholder="Unesite email adresu" />
+                </div>
+
+                <div class="w-full">
+                    <label class="block text-sm font-bold mb-2">Broj telefona (opcionalno)</label>
+                    <input class="px-4 py-2 rounded-full bg-white placeholder-gray font-medium text-sm w-full" type="text" id="#" placeholder="Unesite broj telefona" />
+                </div>
+
+                <div class="w-full">
+                    <label class="block text-sm font-bold mb-2">Naslov</label>
+                    <input class="px-4 py-2 rounded-full bg-white placeholder-gray font-medium text-sm w-full" type="text" id="#" placeholder="Unesite naslov" />
+                </div>
+
+                <div class="w-full">
+                    <label class="block text-sm font-bold mb-2">Poruka</label>
+                    <textarea class="px-4 py-2 rounded-2xl bg-white placeholder-gray font-medium text-sm w-full resize-none" id="#" placeholder="Unesite poruku..." rows="7"></textarea>
+                </div>
+
+                <button class="bg-primary text-silver-light transition ease-out duration-300 rounded-full px-5 py-2.5 font-bold hover:bg-secondary w-full lg:w-auto" type="submit">Pošalji</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>

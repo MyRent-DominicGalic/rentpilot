@@ -1,0 +1,100 @@
+uuid: 96a004f6-a7c0-11ed-b644-7a5c145f9873
+handle: Content\PostsCommonFields
+type: mixin
+name: Blog Posts Common Fields
+fields:
+  sort_by:
+    type: dropdown
+    span: left
+    label: Sort Posts
+    commentAbove: Choose how you would like to sort your posts.
+    tab: General
+    options:
+      date: Post Published Date
+      title: Post Title
+  limit:
+    type: number
+    span: right
+    label: Post Limit
+    commentAbove: How many posts would you like to show? Also used for pagination.
+    default: 3
+    min: 1
+    tab: General
+    trigger:
+      action: disable|empty
+      field: show_specific_items
+      condition: checked
+  filter_by_category:
+    type: switch
+    span: left
+    cssClass: mt-3
+    label: Filter By Category
+    comment: Filter posts by a specific category
+    tab: General
+    trigger:
+      action: disable|empty
+      field: show_specific_items
+      condition: checked
+  reverse_order:
+    type: switch
+    span: right
+    cssClass: mt-3
+    label: Reverse Order
+    comment: Reverse the sort order of the posts (Descending).
+    tab: General
+  post_category_filter:
+    label: Choose Category
+    commentAbove: Choose a category to filter by
+    type: entries
+    span: full
+    maxItems: 1
+    displayMode: recordfinder
+    prompt: Click the %s to find a post category.
+    source: Blog\Category
+    tab: General
+    trigger:
+      action: show
+      field: filter_by_category
+      condition: checked
+  specific_items_mixin:
+    type: mixin
+    tab: General
+    source: Content\SpecificItems
+  specific_items:
+    type: repeater
+    label: Specific Items
+    commentAbove: Add items to show for this block.
+    span: auto
+    tab: General
+    showDuplicate: false
+    showReorder: false
+    prompt: Add a Post
+    form:
+      fields:
+        item:
+          label: Post
+          type: entries
+          maxItems: 1
+          source: Blog\Post
+    trigger:
+      action: show
+      field: show_specific_items
+      condition: checked
+  show_category_nav:
+    type: switch
+    span: auto
+    cssClass: mt-3
+    label: Show Category nav
+    comment: Show category navigation
+    tab: General
+  url:
+    type: pagefinder
+    label: Show More Url
+    singleMode: true
+    scope: false
+    tab: General
+    span: auto
+  pagination:
+    type: mixin
+    tab: General
+    source: Content\Pagination

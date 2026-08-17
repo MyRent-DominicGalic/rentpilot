@@ -1,0 +1,10 @@
+plugin:
+    name: 'GDPR'
+    description: 'GDPR Cookie Settings Manager'
+    author: Epic Digital
+    icon: icon-university
+    homepage: 'https://epicdigital.eu'
+permissions:
+    epic.gdpr.access_cookies_settings:
+        label: 'Allow access to cookies settings'
+        tab: 'GDPR'

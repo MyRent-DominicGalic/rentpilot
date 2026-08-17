@@ -1,0 +1,38 @@
+{% if cookiesSettingsGet('cookies', null)|length %}
+
+<form class="list-cookies">
+
+    {% for cookie in cookiesSettingsGet('cookies') %}
+
+    <div class="single-cookie">
+
+        {% if cookie.description %}
+        <div class="single-cookie__description">{{ cookie.description|raw }}</div>
+        {% endif %}
+
+        <div class="flex justify-between items-center gap-4">
+            <div class="text-xl font-medium">{{ cookie.title }}</div>
+            <label for="epic-cookies-{{cookie.slug}}" class="switch">
+                <input class="checkbox {{ cookie.required ? 'disabled' : ''  }}" type="checkbox" id="epic-cookies-{{cookie.slug}}" {{ epicCookies[cookie.slug] or (cookie.required) ? 'checked' : '' }} {{ cookie.default_enabled ? 'checked' : '' }} {{ cookie.required ? 'disabled' : ''  }}>
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+    <footer class="list-cookies__actions">
+      <button type="button" class="px-6 py-3 text-sm md:text-base border font-medium border-secondary rounded-md text-secondary hover:bg-secondary hover:text-white transition-all js--modal-close">
+        <span>{{ 'Zatvori'|_ }}</span>
+      </button>
+      <button type="button" class="px-6 py-3  text-sm md:text-base btn font-medium bg-secondary hover:bg-accent rounded-md text-white transition-all js--cookies-save-settings">
+        <span>{{ 'Spremi postavke'|_ }}</span>
+      </button>
+    </footer>
+
+
+
+</form>
+
+{% endif %}

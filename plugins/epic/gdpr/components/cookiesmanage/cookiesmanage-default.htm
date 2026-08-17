@@ -1,0 +1,38 @@
+<div class="c-Modal" id="js--CookiesModal" tabindex="-1" role="dialog">
+
+    <div class="c-Modal__inner">
+
+        <header class="c-Modal__header mt-4 sm:mt-0">
+
+            <h2 class="font-medium text-h3">{{ cookiesSettingsGet('cookies_manage_title') }}</h2>
+
+        </header>
+
+        <div class="c-Modal__content">
+
+            {% if cookiesSettingsGet('cookies_manage_content', null) %}
+
+            <div class="c-Modal__text hidden">{{ cookiesSettingsGet('cookies_manage_content')| raw }}</div>
+
+            {% endif %}
+
+            {% partial '@list-cookies-default' %}
+
+        </div>
+
+    </div>
+
+</div>
+
+
+    <script type="text/javascript">
+
+    document.querySelector('.js--cookies-save-settings').addEventListener('click', function() {
+
+      {% partial '@set-cookies' setOnlyManageCookies = true %}
+
+    }, false);
+
+    </script>
+
+    {% partial '@modal-scripts' %}

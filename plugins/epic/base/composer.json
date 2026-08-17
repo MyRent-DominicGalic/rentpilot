@@ -1,0 +1,8 @@
+{
+    "name": "epic/base-plugin",
+    "type": "october-plugin",
+    "description": "A companion plugin to go with the Base Theme.",
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}

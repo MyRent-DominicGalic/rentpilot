@@ -1,0 +1,17 @@
+1763717847a:1:{s:25:"builder/sections/form.htm";a:5:{s:8:"fileName";s:25:"builder/sections/form.htm";s:7:"content";s:303:"<section class="c-Form mb-32">
+
+    <div class="container">
+        <header class="text-center mb-6">
+                <h2>{{ section.title }} </h2>
+        </header>
+         {% partial 'tailor_modules/form' class='lg:p-10 rounded-lg max-w-2xl mx-auto' code = section.forms.slug %}
+    </div>
+</section>";s:5:"mtime";i:1763630250;s:6:"markup";s:303:"<section class="c-Form mb-32">
+
+    <div class="container">
+        <header class="text-center mb-6">
+                <h2>{{ section.title }} </h2>
+        </header>
+         {% partial 'tailor_modules/form' class='lg:p-10 rounded-lg max-w-2xl mx-auto' code = section.forms.slug %}
+    </div>
+</section>";s:4:"code";N;}}

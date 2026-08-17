@@ -1,0 +1,8 @@
+1.0.1: First version of Toc
+1.0.2:
+    - Second version
+    - Corrects some mislabeling
+    - Adds an option to disable the ul bullets or the ol numbers
+    - Added text size option
+1.0.3:
+    - fixed style application to embedded lists

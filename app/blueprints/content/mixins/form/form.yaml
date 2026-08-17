@@ -1,0 +1,14 @@
+uuid: ed7df322-083f-11ed-a233-11166f9cffdf
+handle: Content\Form
+type: mixin
+multisite: sync
+name: Form
+fields:
+  forms:
+    type: entries
+    label: Form
+    commentAbove: Choose a forms you want to display.
+    source: Content\Forms
+    displayMode: recordfinder
+    maxItems: 1
+    tab: General

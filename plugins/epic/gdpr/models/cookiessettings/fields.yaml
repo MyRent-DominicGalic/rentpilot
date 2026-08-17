@@ -1,0 +1,117 @@
+fields: { }
+tabs:
+    icons:
+    fields:
+
+        ## Cookies
+        cookies:
+            prompt: 'epic.gdpr::lang.settings.form_fields.cookies_list_prompt'
+            span: full
+            type: repeater
+            tab: 'epic.gdpr::lang.settings.tabs.cookies_list'
+            form:
+                fields:
+                    title:
+                        label: 'epic.gdpr::lang.settings.form_fields.title'
+                        type: text
+                        span: left
+                        required: true
+                    description:
+                        label: 'epic.gdpr::lang.settings.form_fields.description'
+                        type: richeditor
+                        span: right
+                        size: large
+                    slug:
+                        label: 'epic.gdpr::lang.settings.form_fields.slug'
+                        type: text
+                        span: left
+                        preset:
+                            field: title
+                            type: slug
+                        required: true
+                    required:
+                        label: 'epic.gdpr::lang.settings.form_fields.cookie_required'
+                        comment: 'epic.gdpr::lang.settings.form_fields.cookie_required_description'
+                        type: checkbox
+                        span: left
+                        default: false
+                    default_enabled:
+                        label: 'epic.gdpr::lang.settings.form_fields.cookie_default_enabled'
+                        comment: 'epic.gdpr::lang.settings.form_fields.cookie_default_enabled_description'
+                        type: checkbox
+                        span: left
+                        default: false
+                    scripts_code_section:
+                        comment: 'epic.gdpr::lang.settings.form_fields.scripts'
+                        type: section
+                    scripts:
+                        prompt: 'epic.gdpr::lang.settings.form_fields.scripts_prompt'
+                        span: full
+                        type: repeater
+                        style: collapsed
+                        titleFrom: scripts_title
+                        tab: 'epic.gdpr::lang.settings.tabs.cookies_list'
+                        form:
+                            fields:
+                                scripts_title:
+                                    label: 'epic.gdpr::lang.settings.form_fields.scripts_title'
+                                    comment: 'epic.gdpr::lang.settings.form_fields.scripts_title_description'
+                                    type: text
+                                    span: left
+                                scripts_code:
+                                    label: 'epic.gdpr::lang.settings.form_fields.scripts_code'
+                                    comment: 'epic.gdpr::lang.settings.form_fields.scripts_code_description'
+                                    type: codeeditor
+                                    size: huge
+                                    span: right
+                                    language: javascript
+                                    fontSize: 12px
+                                scripts_disable:
+                                    label: 'epic.gdpr::lang.settings.form_fields.scripts_disable'
+                                    comment: 'epic.gdpr::lang.settings.form_fields.scripts_disable_description'
+                                    type: checkbox
+                                    default: false
+                                    span: left
+
+
+        ## Cookies bar
+
+        cookies_bar_title:
+            span: left
+            label: 'epic.gdpr::lang.settings.form_fields.title'
+            type: text
+            tab: 'epic.gdpr::lang.settings.tabs.cookies_bar'
+        cookies_bar_content:
+            span: full
+            label: 'epic.gdpr::lang.settings.form_fields.content'
+            type: richeditor
+            size: large
+            tab: 'epic.gdpr::lang.settings.tabs.cookies_bar'
+
+
+        ## Cookies manage
+
+        cookies_manage_title:
+            label: 'epic.gdpr::lang.settings.form_fields.title'
+            type: text
+            span: left
+            tab: 'epic.gdpr::lang.settings.tabs.cookies_manage'
+        cookies_manage_content:
+            label: 'epic.gdpr::lang.settings.form_fields.content'
+            type: richeditor
+            span: full
+            size: large
+            tab: 'epic.gdpr::lang.settings.tabs.cookies_manage'
+
+
+        ## Settings
+
+        set_cookies_lifetime_days:
+            label: 'epic.gdpr::lang.settings.form_fields.cookies_lifetime_days'
+            comment: 'epic.gdpr::lang.settings.form_fields.cookies_lifetime_days_comment'
+            default: 365
+            step: 1
+            min: 1
+            type: number
+            span: left
+            tab: 'epic.gdpr::lang.settings.tabs.settings'

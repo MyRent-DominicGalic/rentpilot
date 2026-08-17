@@ -1,0 +1,16 @@
+<div class="layout">
+  <div class="layout-row">
+    <form data-request="onTrigger" data-request-flash>
+      <div class="form-group">
+        <label>Commit message</label>
+        <input type="text" name="commit_message" class="form-control" placeholder="Enter a commit message" />
+      </div>
+      <button type="submit" class="btn btn-primary">
+        <i class="icon-rocket"></i> Deploy
+      </button>
+      <p class="help-block">
+        Triggers GitLab pipeline on <code><?= e(env('GITLAB_DEPLOY_REF', 'main')) ?></code>.
+      </p>
+    </form>
+  </div>
+</div>

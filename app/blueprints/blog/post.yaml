@@ -1,0 +1,113 @@
+uuid: edcd102e-0525-4e4d-b07e-633ae6c18db6
+handle: Blog\Post
+type: stream
+name: Post
+drafts: true
+multisite: sync
+
+customMessages:
+    buttonCreate: New Post
+
+primaryNavigation:
+    label: Blog
+    icon: octo-icon-file
+    iconSvg: modules/tailor/assets/images/blog-icon.svg
+    order: 95
+
+navigation:
+    label: Posts
+    icon: octo-icon-pencil
+    order: 100
+
+groups:
+    regular_post:
+        name: Regular Post
+        fields:
+            
+            content:
+                tab: Edit
+                label: Content
+                type: richeditor
+                span: adaptive
+
+            _blog_post_content:
+                type: mixin
+                source: Blog\BlogContent
+            seo_fields:
+              tab: Manage
+              type: mixin
+              name: SEO Fields
+              source: Content\SEOFields
+            code_fields:
+              tab: Manage
+              type: mixin
+              name: SEO Fields
+              source: Content\CodeFields
+    dynamic_post:
+      name: Dynamic Post
+      icon: icon-columns
+      description: Post with configurable content.
+      fields:
+        builder:
+          tab: Edit
+          label: Content
+          type: repeater
+          commentAbove: Create content for this section. Each content block uses it's own column. Max of 4 per section.
+          span: full
+          displayMode: builder
+          titleFrom: title
+          groups:
+            full_text:
+              name: One column
+              icon: icon-align-left
+              fields:
+                content:
+                  label: Content
+                  type: richeditor
+                  size: huge
+            two_columns:
+              name: Two Columns
+              icon: icon-align-left
+              fields:
+                column_one:
+                  type: richeditor
+                  label: First column
+                  size: huge
+                  span: full
+                column_two:
+                  type: richeditor
+                  label: Second column
+                  size: huge
+                  span: full
+            image_text:
+              name: Image Text
+              icon: icon-align-left
+              fields:
+                content:
+                  label: Content
+                  type: richeditor
+                  size: huge
+                image:
+                  type: mediafinder
+                  mode: image
+                  maxItems: 1
+                  label: Image
+                  span: auto
+                reverse:
+                  type: switch
+                  comment: Switch this on to reverse image / content direction
+                  label: Reverse?
+                  span: auto
+        _blog_post_content:
+            type: mixin
+            source: Blog\BlogContent
+        seo_fields:
+          tab: Manage
+          type: mixin
+          name: SEO Fields
+          source: Content\SEOFields
+        code_fields:
+          tab: Manage
+          type: mixin
+          name: SEO Fields
+          source: Content\CodeFields

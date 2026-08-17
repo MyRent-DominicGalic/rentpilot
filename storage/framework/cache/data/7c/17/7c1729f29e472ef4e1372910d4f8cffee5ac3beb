@@ -1,0 +1,46 @@
+1787058114a:1:{s:26:"builder/sections/posts.htm";a:5:{s:8:"fileName";s:26:"builder/sections/posts.htm";s:7:"content";s:798:"<{{ section.html_tag ?? 'div' }} id="{{ section.html_anchor }}" class="pb-16 {{ section.css_classes |join(' ') }}">
+
+    <div class="{{ section.container_style ?? 'container' }}">
+
+        {% if section.show_category_nav %}
+          {% partial 'builder/blogs/_sidebar' %}
+        {% endif %}
+
+        <div id="posts-ajax">
+          {% partial 'builder/blogs/_ajaxlist' %}
+        </div>
+
+        {% if section.url %}
+        <footer class="mb-16">
+            <a class="inline-block text-base font-medium border border-purple bg-purple hover:bg-purple-light transition-all text-white rounded-full px-4 py-1" href="{{ section.url | link }}">
+              Pogledaj više
+            </a>
+        </footer>
+        {% endif %}
+
+    </div>
+
+</{{ section.html_tag ?? 'div' }}>
+";s:5:"mtime";i:1778867854;s:6:"markup";s:796:"<{{ section.html_tag ?? 'div' }} id="{{ section.html_anchor }}" class="pb-16 {{ section.css_classes |join(' ') }}">
+
+    <div class="{{ section.container_style ?? 'container' }}">
+
+        {% if section.show_category_nav %}
+          {% partial 'builder/blogs/_sidebar' %}
+        {% endif %}
+
+        <div id="posts-ajax">
+          {% partial 'builder/blogs/_ajaxlist' %}
+        </div>
+
+        {% if section.url %}
+        <footer class="mb-16">
+            <a class="inline-block text-base font-medium border border-purple bg-purple hover:bg-purple-light transition-all text-white rounded-full px-4 py-1" href="{{ section.url | link }}">
+              Pogledaj više
+            </a>
+        </footer>
+        {% endif %}
+
+    </div>
+
+</{{ section.html_tag ?? 'div' }}>";s:4:"code";N;}}

@@ -1,0 +1,41 @@
+uuid: f18400ca-7b76-485e-a836-85fbe3e8eab2
+handle: Content\MenuLink
+type: structure
+name: Menu Link
+drafts: false
+multisite: sync
+pagefinder: false
+navigation: false
+
+structure:
+  maxDepth: 3
+
+customMessages:
+  buttonCreate: New Menu Link
+
+fields:
+  page:
+    type: pagefinder
+    label: Page
+    singleMode: true
+    translatable: false
+    span: full
+  banner:
+      label: Image
+      type: mediafinder
+      mode: image
+      span: auto
+      translatable: false
+  icon:
+    label: Icon
+    type: text
+    span: auto
+    translatable: false
+  external:
+    label: External link
+    type: switch
+    default: unchecked
+  is_megamenu:
+    label: Megamenu?
+    type: switch
+    default: unchecked

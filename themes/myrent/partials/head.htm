@@ -1,0 +1,12 @@
+[global settings]
+handle = "Content\Settings"
+
+[sitePicker]
+==
+{% set sites = sitePicker.sites %}
+
+{% partial 'site/meta' sites = sites %}
+{% partial 'site/favicon' settings = settings %}
+{% partial 'site/styles' %}
+{% partial 'tracking/gtag-head' %}
+{% partial 'site/recaptcha' %}

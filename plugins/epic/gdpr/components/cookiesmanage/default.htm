@@ -1,0 +1,11 @@
+<div id="ajax-cookiesManage">
+</div>
+
+
+<script type="text/javascript">
+if(document.cookie.indexOf('epic-cookies-consent=') == -1) {
+    oc.ajax('{{__SELF__}}::onRun', {
+      update: {'{{__SELF__}}::cookiesmanage-data': '#ajax-cookiesManage'},
+    });
+}
+</script>

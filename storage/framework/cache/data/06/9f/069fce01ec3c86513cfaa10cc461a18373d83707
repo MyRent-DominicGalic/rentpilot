@@ -1,0 +1,174 @@
+1787058113a:1:{s:27:"builder/articles/_posts.htm";a:6:{s:8:"fileName";s:27:"builder/articles/_posts.htm";s:7:"content";s:2837:"[collection posts]
+handle = "Knowledge\Article"
+==
+{% set query = input('q') %}
+{% set categories = input('categories') %}
+
+{% set sort_order = section.reverse_order ? 'desc' : 'asc' %}
+
+{% if section.show_specific_items %}
+    {% set posts = collect() %}
+    {% for post in section.specific_items %}
+        {% if post.item is not empty %}
+            {% do posts.push(post.item) %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+{% if categories %}
+    {% set posts = posts.whereRelation('categories', 'id', categories) %}
+{% endif %}
+
+{% if query %}
+  {% set posts = posts
+      .searchWhere(query, ['title', 'content', 'meta_title', 'meta_description', 'featured_text'])
+  %}
+{% endif %}
+
+{% if section.sort_by == 'title' %}
+    {% if section.show_specific_items %}
+        {% if sort_order == 'asc' %}
+            {% set posts = posts.sortBy('title') %}
+        {% else %}
+            {% set posts = posts.sortBy('title')|reverse %}
+        {% endif %}
+    {% else %}
+        {% set posts = posts.orderBy('title', sort_order) %}
+    {% endif %}
+{% endif %}
+
+{% if section.sort_by == 'date' %}
+    {% if section.show_specific_items %}
+        {% if sort_order == 'asc' %}
+            {% set posts = posts.sortBy('published_at_date') %}
+        {% else %}
+            {% set posts = posts.sortBy('published_at_date')|reverse %}
+        {% endif %}
+    {% else %}
+        {% set posts = posts.orderBy('published_at_date', sort_order) %}
+    {% endif %}
+{% endif %}
+
+{% if section.enable_pagination %}
+    {% set posts = posts.paginate(section.limit) %}
+{% else %}
+    {% if not section.show_specific_items %}
+        {% set posts = posts.limit(section.limit).get() %}
+    {% endif %}
+{% endif %}
+
+{% if posts | length %}
+  <div class="c-Blogs__list grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-8 {{ section.limit == 3 ? 'overflow-x-wrap-nowrap overflow-x-wrap-nowrap--three' }}">
+
+    {% for key, item in posts %}
+      {% partial 'builder/articles/_article' item = item key = key %}
+    {% endfor %}
+
+  </div>
+{% else %}
+  {% partial 'builder/articles/_noresults' item = item key = key %}
+{% endif %}
+
+{% if section.enable_pagination %}
+<footer class="flex justify-center items-center">
+  {% if posts.hasMorePages %}
+      <button class="bg-purple text-white text-md rounded-full px-4 py-2"
+          data-request="onAjax"
+          data-request-update="{ _self: '@' }"
+          data-request-success="this.parentElement.remove()"
+          data-request-data="{ page: {{ posts.currentPage + 1 }} }"
+          data-attach-loading>
+          Učitaj još
+      </button>
+
+      <div class="text-gray ml-4">
+        Prikazano {{ posts.count() * posts.currentPage }} članaka od {{ posts.total() }}
+      </div>
+  {% endif %}
+</footer>
+{% endif %}";s:5:"mtime";i:1778867853;s:6:"markup";s:2783:"{% set query = input('q') %}
+{% set categories = input('categories') %}
+
+{% set sort_order = section.reverse_order ? 'desc' : 'asc' %}
+
+{% if section.show_specific_items %}
+    {% set posts = collect() %}
+    {% for post in section.specific_items %}
+        {% if post.item is not empty %}
+            {% do posts.push(post.item) %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+{% if categories %}
+    {% set posts = posts.whereRelation('categories', 'id', categories) %}
+{% endif %}
+
+{% if query %}
+  {% set posts = posts
+      .searchWhere(query, ['title', 'content', 'meta_title', 'meta_description', 'featured_text'])
+  %}
+{% endif %}
+
+{% if section.sort_by == 'title' %}
+    {% if section.show_specific_items %}
+        {% if sort_order == 'asc' %}
+            {% set posts = posts.sortBy('title') %}
+        {% else %}
+            {% set posts = posts.sortBy('title')|reverse %}
+        {% endif %}
+    {% else %}
+        {% set posts = posts.orderBy('title', sort_order) %}
+    {% endif %}
+{% endif %}
+
+{% if section.sort_by == 'date' %}
+    {% if section.show_specific_items %}
+        {% if sort_order == 'asc' %}
+            {% set posts = posts.sortBy('published_at_date') %}
+        {% else %}
+            {% set posts = posts.sortBy('published_at_date')|reverse %}
+        {% endif %}
+    {% else %}
+        {% set posts = posts.orderBy('published_at_date', sort_order) %}
+    {% endif %}
+{% endif %}
+
+{% if section.enable_pagination %}
+    {% set posts = posts.paginate(section.limit) %}
+{% else %}
+    {% if not section.show_specific_items %}
+        {% set posts = posts.limit(section.limit).get() %}
+    {% endif %}
+{% endif %}
+
+{% if posts | length %}
+  <div class="c-Blogs__list grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-8 {{ section.limit == 3 ? 'overflow-x-wrap-nowrap overflow-x-wrap-nowrap--three' }}">
+
+    {% for key, item in posts %}
+      {% partial 'builder/articles/_article' item = item key = key %}
+    {% endfor %}
+
+  </div>
+{% else %}
+  {% partial 'builder/articles/_noresults' item = item key = key %}
+{% endif %}
+
+{% if section.enable_pagination %}
+<footer class="flex justify-center items-center">
+  {% if posts.hasMorePages %}
+      <button class="bg-purple text-white text-md rounded-full px-4 py-2"
+          data-request="onAjax"
+          data-request-update="{ _self: '@' }"
+          data-request-success="this.parentElement.remove()"
+          data-request-data="{ page: {{ posts.currentPage + 1 }} }"
+          data-attach-loading>
+          Učitaj još
+      </button>
+
+      <div class="text-gray ml-4">
+        Prikazano {{ posts.count() * posts.currentPage }} članaka od {{ posts.total() }}
+      </div>
+  {% endif %}
+</footer>
+{% endif %}";s:4:"code";N;s:16:"collection posts";a:1:{s:6:"handle";s:17:"Knowledge\Article";}}}

@@ -1,0 +1,8 @@
+uuid: 96601276-a7c0-11ed-b652-e07d090eb056
+handle: Content\Posts
+type: mixin
+name: Blog Posts
+fields:
+  common_fields:
+    type: mixin
+    source: Content\PostsCommonFields

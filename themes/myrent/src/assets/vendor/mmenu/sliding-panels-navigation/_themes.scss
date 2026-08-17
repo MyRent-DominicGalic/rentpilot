@@ -1,0 +1,13 @@
+#{$mmprfx} {
+    //  Light theme
+    &#{$mmprfx}--light {
+        color: #2b6c78;
+        background: #fff;
+    }
+
+    //  Dark theme
+    &#{$mmprfx}--dark {
+        color: #ddd;
+        background: #333;
+    }
+}

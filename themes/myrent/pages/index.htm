@@ -1,0 +1,38 @@
+url = "/"
+layout = "default"
+title = "Index"
+
+[global settings]
+handle = "Content\Settings"
+==
+
+{% set page = settings.homepage %}
+
+{% put header_code %}
+    {{ page.header_code|raw }}
+{% endput %}
+
+{% put body_code %}
+    {{ page.body_code|raw }}
+{% endput %}
+
+{% put footer_code %}
+    {{ page.footer_code|raw }}
+{% endput %}
+
+{% if settings.homepage is empty %}
+    {% do abort('404') %}
+	{# do redirect('/') #}
+{% else %}
+
+    {% if page.entry_type == 'simple' %}
+      {% partial 'page/content' section=section %}
+    {% endif %}
+
+    {% if page.entry_type == 'builder' %}
+        {% for section in page.builder %}
+          {% partial 'builder/sections/' ~ section.content_group section=section %}
+        {% endfor %}
+    {% endif %}
+
+{% endif %}

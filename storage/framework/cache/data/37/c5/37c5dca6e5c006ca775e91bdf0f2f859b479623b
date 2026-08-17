@@ -1,0 +1,19 @@
+1787058115a:1:{s:16:"site/scripts.htm";a:5:{s:8:"fileName";s:16:"site/scripts.htm";s:7:"content";s:230:"<!-- Scripts  -->
+<script type="text/javascript" src="{{ [
+  '@framework',
+  '@framework.turbo',
+  '@framework.extras',
+  'assets/vendor/mmenu/mmenu-light.js',
+  'assets/js/app.js'
+  ] | theme }}">
+</script>
+{% scripts %}";s:5:"mtime";i:1778867854;s:6:"markup";s:230:"<!-- Scripts  -->
+<script type="text/javascript" src="{{ [
+  '@framework',
+  '@framework.turbo',
+  '@framework.extras',
+  'assets/vendor/mmenu/mmenu-light.js',
+  'assets/js/app.js'
+  ] | theme }}">
+</script>
+{% scripts %}";s:4:"code";N;}}

@@ -1,0 +1,182 @@
+{%  set tocSelector = __SELF__.tocSelector %}
+{%  set contentSelector = __SELF__.contentSelector %}
+{%  set headingSelector = __SELF__.headingSelector %}
+{%  set autoHeadings = __SELF__.autoHeadings %}
+{%  set listBullets = __SELF__.listBullets %}
+{%  set ignoreSelector = __SELF__.ignoreSelector%}
+{%  set linkClass = __SELF__.linkClass %}
+{%  set extraLinkClasses = __SELF__.extraLinkClasses %}
+{%  set activeLinkClass = __SELF__.activeLinkClass %}
+{%  set listClass = __SELF__.listClass %}
+{%  set extraListClasses = __SELF__.extraListClasses %}
+{%  set isCollapsedClass = __SELF__.isCollapsedClass %}
+{%  set collapsibleClass = __SELF__.collapsibleClass %}
+{%  set listItemClass = __SELF__.listItemClass %}
+{%  set collapseDepth = __SELF__.collapseDepth %}
+{%  set scrollSmooth = __SELF__.scrollSmooth %}
+{%  set scrollSmoothDuration = __SELF__.scrollSmoothDuration %}
+{%  set scrollEndCallback = __SELF__.scrollEndCallback %}
+{%  set headingsOffset = __SELF__.headingsOffset %}
+{%  set throttleTimeout = __SELF__.throttleTimeout %}
+{%  set positionFixedSelector = __SELF__.positionFixedSelector %}
+{%  set positionFixedClass = __SELF__.positionFixedClass %}
+{%  set fixedSidebarOffset = __SELF__.fixedSidebarOffset %}
+{%  set includeHtml = __SELF__.includeHtml %}
+{%  set onClick = __SELF__.onClick %}
+{%  set orderedList = __SELF__.orderedList %}
+{%  set hasInnerContainers = __SELF__.hasInnerContainers %}
+{%  set textSize = __SELF__.textSize %}
+
+
+<script type="text/javascript">
+    function applyHeaders()
+    {
+        let x = document.getElementsByClassName("{{contentSelector}}");
+        let array = "{{headingSelector}}".split(",").map(function(item) {
+            return item.toUpperCase().trim();
+        });
+        for (let i = 0; i < x[0].children.length; i++) {
+            if(array.includes(x[0].children[i].tagName))
+            {
+                x[0].children[i].id = i.toString();
+            }
+        }
+    }
+
+    function removeListBullets()
+    {
+        let x = document.getElementsByClassName("{{listClass}}");
+        for (let i = 0; i < x.length; i++) {
+            x[i].style.listStyleType = "none";
+        }
+
+    }
+
+    function setTextSize()
+    {
+        let x = document.getElementsByClassName("{{listClass}}");
+        for (let i = 0; i < x.length; i++) {
+
+            x[i].style.fontSize = "{{textSize}}px";
+        }
+    }
+
+    let callback = function(){
+
+        if({% if autoHeadings %} true {% else %} false {% endif %})
+        {
+            applyHeaders();
+        }
+
+        tocbot.init({
+            // Where to render the table of contents.
+            tocSelector: '.{{ tocSelector }}',
+
+            // Where to grab the headings to build the table of contents.
+            contentSelector: '.{{ contentSelector }}',
+
+            // Which headings to grab inside of the contentSelector element.
+            headingSelector: '{{ headingSelector }} ',
+
+            // Headings that match the ignoreSelector will be skipped.
+            ignoreSelector: '.{{ ignoreSelector }}',
+
+            // Main class to add to links.
+            linkClass: '{{linkClass}}',
+
+            // Extra classes to add to links.
+            extraLinkClasses: '{{extraLinkClasses}}',
+
+            // Class to add to active links,
+            // the link corresponding to the top most heading on the page.
+            activeLinkClass: '{{activeLinkClass}}',
+
+            // Main class to add to lists.
+            listClass: '{{listClass}}',
+
+            // Extra classes to add to lists.
+            extraListClasses: '{{ extraListClasses }}',
+
+            // Class that gets added when a list should be collapsed.
+            isCollapsedClass: '{{ isCollapsedClass }}',
+
+            // Class that gets added when a list should be able
+            // to be collapsed but isn't necessarily collpased.
+            collapsibleClass: '{{collapsibleClass}}',
+
+            // Class to add to list items.
+            listItemClass: '{{listItemClass}}',
+
+            // How many heading levels should not be collpased.
+            // For example, number 6 will show everything since
+            // there are only 6 heading levels and number 0 will collpase them all.
+            // The sections that are hidden will open
+            // and close as you scroll to headings within them.
+            collapseDepth: {{ collapseDepth }},
+
+            // Smooth scrolling enabled.
+            scrollSmooth: {% if scrollSmooth %} true {% else %} false {% endif %},
+
+            // Smooth scroll duration.
+            scrollSmoothDuration: {{scrollSmoothDuration}},
+
+            // Callback for scroll end.
+            scrollEndCallback: function (e) { {{scrollEndCallback }} },
+
+            // Headings offset between the headings and the top of the document (this is meant for minor adjustments).
+            headingsOffset: {{ headingsOffset }},
+
+            // Timeout between events firing to make sure it's
+            // not too rapid (for performance reasons).
+            throttleTimeout: {{ throttleTimeout  }},
+
+            // Element to add the positionFixedClass to.
+            positionFixedSelector: {{ positionFixedSelector }},
+
+            // Fixed position class to add to make sidebar fixed after scrolling
+            // down past the fixedSidebarOffset.
+            positionFixedClass: '{{is-position-fixed}}',
+
+            // fixedSidebarOffset can be any number but by default is set
+            // to auto which sets the fixedSidebarOffset to the sidebar
+            // element's offsetTop from the top of the document on init.
+            fixedSidebarOffset: '{{ fixedSidebarOffset }}',
+
+            // includeHtml can be set to true to include the HTML markup from the
+            // heading node instead of just including the textContent.
+            includeHtml: {% if includeHtml %} true {% else %} false {% endif %},
+
+            // onclick function to apply to all links in toc. will be called with
+            // the event as the first parameter, and this can be used to stop,
+            // propagation, prevent default or perform action
+            onClick: {% if onClick %} true {% else %} false {% endif %},
+
+            orderedList: {% if orderedLists %} true {% else %} false {% endif %},
+
+            hasInnerContainers: {% if hasInnerContainers %} true {% else %} false {% endif %},
+
+        });
+        if({% if listBullets %} false {% else %} true {% endif %}) {
+            removeListBullets();
+        }
+
+        if({{ textSize }} > 0)
+        {
+            setTextSize();
+        }
+
+    };
+
+    if (
+        document.readyState === "complete" ||
+        (document.readyState !== "loading" && !document.documentElement.doScroll)
+    ) {
+        callback();
+    } else {
+        document.addEventListener("DOMContentLoaded", callback);
+    }
+
+
+
+
+</script>

@@ -1,0 +1,77 @@
+<?php
+    // Configure your working copy path once (or read from .env)
+    $repoPath = env('DEPLOY_REPO_DIR', 'D:\myRent\webs\myrent_web');
+    $isRepo = is_dir($repoPath.'/.git');
+
+    function runGit($cmd) {
+
+        // Configure your working copy path once (or read from .env)
+        $repoPath = env('DEPLOY_REPO_DIR', 'D:\myRent\webs\myrent_web');
+        $isRepo = is_dir($repoPath.'/.git');
+
+        if (!$isRepo) return ['error' => "Not a git repo: $repoPath"];
+        $cmd = "cd ".escapeshellarg($repoPath)." && $cmd 2>&1";
+        return trim(shell_exec("$cmd"));
+    }
+
+    $status = $isRepo ? runGit('git status --porcelain=v1') : '';
+    $branch = $isRepo ? runGit('git rev-parse --abbrev-ref HEAD') : '—';
+    $last   = $isRepo ? runGit('git log -1 --pretty="%h %s (%cr) by %an"') : '—';
+?>
+<div class="layout">
+  <div class="layout-row">
+    <div class="scoreboard">
+      <div data-control="toolbar">
+        <h4>Repository</h4>
+        <p><code><?= e($repoPath) ?></code></p>
+        <p>Branch: <strong><?= e($branch) ?></strong></p>
+        <p>Last commit: <?= e($last) ?></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="layout-row">
+    <div class="callout callout-info">
+      This shows unstaged/unstashed local changes (same machine where October runs).
+    </div>
+  </div>
+
+  <div class="layout-row">
+    <div id="changesList">
+      <?php if (!$isRepo): ?>
+        <p class="flash-message error">Directory is not a git repository.</p>
+      <?php elseif ($status === ''): ?>
+        <p class="flash-message success">No local changes 🎉</p>
+      <?php else: ?>
+        <table class="table data">
+          <thead>
+            <tr><th>State</th><th>File</th></tr>
+          </thead>
+          <tbody>
+            <?php foreach (explode("\n", $status) as $line):
+              if ($line==='') continue;
+              $state = substr($line, 0, 2);
+              $file  = trim(substr($line, 3));
+
+              $skipWords = ['cache', 'sessions', 'combine', 'log' ,'twig'];
+              if (array_filter($skipWords, fn($w) => stripos($file, $w) !== false)) {
+                continue;
+              }
+            ?>
+              <tr>
+                <td><code><?= e($state) ?></code></td>
+                <td><?= e($file) ?></td>
+              </tr>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
+      <?php endif; ?>
+    </div>
+  </div>
+
+  <div class="layout-row hidden">
+    <button data-request="onRefreshChanges" class="btn btn-default">
+      <i class="icon-refresh"></i> Refresh
+    </button>
+  </div>
+</div>

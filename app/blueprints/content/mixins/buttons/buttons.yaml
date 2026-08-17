@@ -1,0 +1,36 @@
+uuid: 31c7a237-fee5-11ec-b7e2-1d5410f76a4d
+handle: Content\Buttons
+type: mixin
+name: Button
+
+fields:
+  button_title:
+    type: text
+    label: Button Title
+    span: left
+    placeholder: Your button's text
+  button_page:
+    type: pagefinder
+    label: Button Page
+    singleMode: true
+    span: right
+  hr_1:
+    type: ruler
+  button_style:
+    type: dropdown
+    label: Style
+    commentAbove: Change the style of this button.
+    span: auto
+    default: value[primary]
+    options:
+      primary: Primary
+  button_external:
+    type: switch
+    label: Open in new tab
+    comment: If activated, when someone clicks this link, it'll open it in a new tab.
+    span: right
+  icon:
+    label: Icon
+    type: text
+    span: auto
+    tab: General

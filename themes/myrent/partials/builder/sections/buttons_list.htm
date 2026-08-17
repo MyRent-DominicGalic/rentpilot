@@ -1,0 +1,16 @@
+<{{ section.html_tag }} id="{{ section.html_anchor }}" class="{{ section.css_classes |join(' ') }}">
+
+        <div class="{{ section.container_style }}">
+
+          <div class="flex justify-center flex-wrap gap-4 px-4">
+              {% for item in section.buttons %}
+              <a href="{{ item.button_page | link }}" {{ item.button_external ? 'target="_blank" rel="noopener"' }} class="flex items-center gap-4 rounded-xl shadow-base bg-white p-4 transition ease-out duration-300 hover:bg-primary hover:text-white">
+                  <img width="32" height="32" src="{{ ('assets/icons/' ~ item.icon ~ '.svg')| theme }}" alt="icon" />
+                  <span class="text-base lg:text-lg font-bold">{{ item.button_title }}</span>
+              </a>
+              {% endfor %}
+          </div>
+
+        </div>
+
+</{{ section.html_tag }}>

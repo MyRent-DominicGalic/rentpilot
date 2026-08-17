@@ -1,0 +1,96 @@
+uuid: 24f86cb8-0eaa-4e73-9b54-85a54021477c
+handle: Content\PageSettings
+type: global
+name: Static Content
+multisite: true
+description: Adjust the content parameters of the site.
+
+
+navigation:
+  icon: icon-cog
+  order: 32
+
+fields:
+  contact_title:
+    label: Title
+    type: text
+    span: auto
+    translatable: true
+    tab: Contact Section
+  contact_hours:
+    label: Working hours
+    type: text
+    span: auto
+    tab: Contact Section
+  contact_email:
+    label: Email
+    type: text
+    span: auto
+    tab: Contact Section
+  contact_phone:
+    label: Phone
+    type: text
+    span: auto
+    tab: Contact Section
+  contact_company:
+    label: Company
+    type: text
+    span: auto
+    tab: Contact Section
+  contact_address:
+    label: Address
+    type: textarea
+    size: small
+    span: auto
+    tab: Contact Section
+  support_title:
+    label: Title
+    type: text
+    span: auto
+    translatable: true
+    tab: Support Section
+  support_hours:
+    label: Working hours
+    type: text
+    span: auto
+    tab: Support Section
+  support_phone:
+    label: Phone
+    type: text
+    span: auto
+    tab: Support Section
+  support_email:
+    label: Email
+    type: text
+    span: auto
+    tab: Support Section
+  newsletter_title:
+    label: Title
+    type: text
+    span: auto
+    translatable: true
+    tab: Newsletter Section
+  newsletter_description:
+    label: Description
+    type: textarea
+    span: auto
+    translatable: true
+    tab: Newsletter Section
+  newsletter_button:
+    label: Button
+    type: text
+    span: auto
+    translatable: true
+    tab: Newsletter Section
+  rent_type:
+    label: Rental type
+    type: text
+    span: auto
+    translatable: true
+    tab: Title Section
+  product:
+    label: Product
+    type: text
+    span: auto
+    translatable: true
+    tab: Title Section

@@ -1,0 +1,24 @@
+uuid: 1ceb82f6-590b-4921-bb9d-477c0179e1a2
+handle: Content\Menu
+type: entry
+name: Menus
+drafts: false
+multisite: sync
+pagefinder: false
+
+navigation:
+  icon: icon-list
+  parent: Content\Page
+  order: 5
+
+customMessages:
+  buttonCreate: New Menu
+
+fields:
+  links:
+    type: entries
+    displayMode: controller
+    source: Content\MenuLink
+    singleMode: false
+    showReorder: true
+    scope: false

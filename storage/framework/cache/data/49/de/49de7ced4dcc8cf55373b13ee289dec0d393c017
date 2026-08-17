@@ -1,0 +1,49 @@
+1763716651a:1:{s:20:"components/share.htm";a:5:{s:8:"fileName";s:20:"components/share.htm";s:7:"content";s:1240:"<ul class="flex gap-4">
+    <li>
+      <a href="https://facebook.com/sharer.php?u={{ page.id | page }}" target="_blank" rel="noopener">
+        <img width="24" height="24" src="{{ 'assets/icons/facebook.svg'| theme }}" alt="facebook"/></a>
+      </li>
+    {#
+      <li>
+        <a class="relative js--copy-link" href="javascript:;" data-text="{{ ''| page }}"  data-success="{{ 'share.linkcopied'|trans }}" onclick="copyLinkFunction(this);">
+            <img width="24" height="24" src="{{ 'assets/icons/instagram.svg'| theme }}" alt="instagram"/>
+        </a>
+        <p class="bg-secondary text-white text-center absolute left-0 bottom-0 mb-12 py-3 min-w-15 rounded rounded--lg text-sm font-semibold px-6" style="display:none">
+        </p>
+      </li>
+    #}
+    <li>
+      <a href="https://twitter.com/intent/tweet?status={{ item.title }}+{{ page.id | page }}" target="_blank" rel="noopener">
+        <img width="24" height="24" src="{{ 'assets/icons/twitter.svg'| theme }}" alt="twitter"/>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.id | page }}">
+        <img width="24" height="24" src="{{ 'assets/icons/linkedin.svg'| theme }}" alt="linkedin"/>
+      </a>
+    </li>
+</ul>";s:5:"mtime";i:1763630250;s:6:"markup";s:1240:"<ul class="flex gap-4">
+    <li>
+      <a href="https://facebook.com/sharer.php?u={{ page.id | page }}" target="_blank" rel="noopener">
+        <img width="24" height="24" src="{{ 'assets/icons/facebook.svg'| theme }}" alt="facebook"/></a>
+      </li>
+    {#
+      <li>
+        <a class="relative js--copy-link" href="javascript:;" data-text="{{ ''| page }}"  data-success="{{ 'share.linkcopied'|trans }}" onclick="copyLinkFunction(this);">
+            <img width="24" height="24" src="{{ 'assets/icons/instagram.svg'| theme }}" alt="instagram"/>
+        </a>
+        <p class="bg-secondary text-white text-center absolute left-0 bottom-0 mb-12 py-3 min-w-15 rounded rounded--lg text-sm font-semibold px-6" style="display:none">
+        </p>
+      </li>
+    #}
+    <li>
+      <a href="https://twitter.com/intent/tweet?status={{ item.title }}+{{ page.id | page }}" target="_blank" rel="noopener">
+        <img width="24" height="24" src="{{ 'assets/icons/twitter.svg'| theme }}" alt="twitter"/>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.id | page }}">
+        <img width="24" height="24" src="{{ 'assets/icons/linkedin.svg'| theme }}" alt="linkedin"/>
+      </a>
+    </li>
+</ul>";s:4:"code";N;}}

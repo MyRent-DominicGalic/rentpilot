@@ -1,0 +1,39 @@
+<div class="c-CookiesBar transition-all" style="transform: translateY(150%);">
+
+  <div class="c-CookiesBar__note">
+    {% if cookiesSettingsGet('cookies_bar_title') %}
+      <h5 class="c-CookiesBar__title">{{ cookiesSettingsGet('cookies_bar_title') }}</h5>
+    {% endif %}    <div class="c-CookiesBar__description">
+      <p>{{ cookiesSettingsGet('cookies_bar_content') }}</p>
+    </div>
+  </div>
+
+  <div class="c-CookiesBar__btns">
+
+    <button type="button" class="c-CookiesBar__btn c-CookiesBar__btn--settings js--modal-trigger text-sm md:text-base px-6 py-3 btn border border-secondary text-secondary hover:bg-secondary hover:text-white transition-all">
+      <span>{{ 'Postavke'|_ }}</span>
+    </button>
+
+    <button type="button" class="c-CookiesBar__btn c-CookiesBar__btn--accept js--cookies-accept-all text-sm md:text-base px-6 py-3 btn border border-secondary bg-secondary text-white hover:bg-accent hover:text-white hover:border-accent transition-all">
+      <span>{{ 'Prihvaćam'|_ }}</span>
+    </button>
+
+  </div>
+
+</div>
+
+
+
+<script type="text/javascript">
+
+  document.querySelector('.js--cookies-accept-all').addEventListener('click', function() {
+    {% partial '@set-cookies' %}
+  }, false);
+
+  var element = document.querySelector('.c-CookiesBar');
+
+  setTimeout(() => {
+    element.style.removeProperty("transform");
+  }, "3500")
+
+</script>

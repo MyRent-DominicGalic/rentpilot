@@ -1,0 +1,6 @@
+1763717225a:1:{s:29:"builder/content/full_text.htm";a:5:{s:8:"fileName";s:29:"builder/content/full_text.htm";s:7:"content";s:60:"<div class="py-6">
+  {{ section.content | content }}
+</div>
+";s:5:"mtime";i:1763630250;s:6:"markup";s:59:"<div class="py-6">
+  {{ section.content | content }}
+</div>";s:4:"code";N;}}

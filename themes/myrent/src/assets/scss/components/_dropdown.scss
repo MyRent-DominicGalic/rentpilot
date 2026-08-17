@@ -1,0 +1,61 @@
+.c-Dropdown {
+  position: relative;
+  pointer-events: all;
+
+    &__trigger {
+      cursor: pointer;
+      z-index: 2;
+
+      svg {
+        transform-origin: center;
+        transform: scale(1.5);
+      }
+    }
+
+    &__content {
+      @apply bg-white shadow-lg;
+      padding: 0;
+      -webkit-overflow-scrolling: touch;
+      position: absolute;
+      pointer-events: none;
+      visibility: hidden;
+      opacity: 0;
+      transition: all .35s ease;
+      top: 3rem;
+      z-index: 1;
+      left: 50%;
+      transform: translateX(-50%);
+
+      &--lang {
+        right: 0;
+        left: auto;
+        transform: none;
+
+        svg {
+          width: 1.75rem;
+          height: 1.75rem;
+          object-fit: contain;
+        }
+      }
+    }
+
+}
+
+.js-dropdown-open {
+    .js-dropdown-toggle {
+      @apply text-secondary;
+    }
+    .js-dropdown-content {
+      visibility: visible!important;
+      opacity: 1!important;
+      pointer-events: all;
+    }
+
+    svg {
+      transform: rotate(180deg);
+
+      path {
+          stroke: #1EBDBD !important;
+      }
+    }
+}

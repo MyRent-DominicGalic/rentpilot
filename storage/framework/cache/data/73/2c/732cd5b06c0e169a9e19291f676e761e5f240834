@@ -1,0 +1,193 @@
+1787058114a:1:{s:41:"builder/partials/card-slider-overflow.htm";a:5:{s:8:"fileName";s:41:"builder/partials/card-slider-overflow.htm";s:7:"content";s:4659:"<div class="{{ section.container_style }} px-4 py-16">
+
+  {% if section.title %}
+    <h2 class="mb-12 text-center mx-auto max-w-2xl">
+      {{ section.title | raw }}
+    </h2>
+  {% endif %}
+
+  <div class="relative js-slider-wrap">
+
+    <div class="js-slider-overflow overflow-scroll gap-6 pb-16 flex flex-nowrap w-screen-2x -ml-96 pl-96 pr-48">
+
+        {% for item in section.items %}
+        <article class="js-slide card shrink-0 w-80 sm:w-96  flex flex-col bg-white rounded-xl shadow-lg overflow-hidden transition ease-out duration-300">
+           <a href="{{ item.button_page | link  }}" {{ item.button_external ? 'target="_blank" rel="noopener"' }} class="card_img h-44 w-full overflow-hidden relative">
+               <img class="w-full h-full object-cover" src="{{ item.image | media }}" alt="{{ item.image | replace({ '_' : ' ', '/site-images/' : '', '.webp' : '' }) }}" loading="lazy" />
+           </a>
+           <div class="p-4 flex-1 flex flex-col">
+               <h3 class="text-xl font-bold mb-2">
+                 {{ item.title }}
+               </h3>
+               <div class="mb-4 text-gray text-sm lg:text-base">
+                 {{ item.content | content }}
+               </div>
+               <div class="mt-auto">
+                   <a class="inline-flex items-center gap-2 font-bold bg-secondary bg-opacity-5 text-primary transition ease-out duration-300 hover:!bg-secondary hover:!text-white rounded-full px-5 py-2.5" href="{{ item.button_page | link  }}" {{ item.button_external ? 'target="_blank" rel="noopener"' }}>
+                       {{ item.button_title ?? 'Saznajte više' }}
+                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path class="transition ease-out duration-300 fill-primary" d="M14.7071 5.29289C14.3166 4.90237 13.6834 4.90237 13.2929 5.29289C12.9024 5.68342 12.9024 6.31658 13.2929 6.70711L17.5858 11H4C3.44772 11 3 11.4477 3 12C3 12.5523 3.44772 13 4 13H17.5858L13.2929 17.2929C12.9024 17.6834 12.9024 18.3166 13.2929 18.7071C13.6834 19.0976 14.3166 19.0976 14.7071 18.7071L20.7071 12.7071C21.0976 12.3166 21.0976 11.6834 20.7071 11.2929L14.7071 5.29289Z" />
+                       </svg>
+                   </a>
+               </div>
+           </div>
+       </article>
+        {% endfor %}
+
+    </div>
+
+    <button class="hidden lg:flex items-center justify-center text-secondary hover:bg-secondary-lightest bg-white w-16 h-16 text-md shadow-lg rounded-full transition-all absolute -bottom-8 transform left-0 js-goto-prev-slide cursor-pointer" type="button" name="Go to Next Slide" title="Go to Next Slide">
+      <img class="inline-block transform origin-center rotate-180" src="{{ 'assets/icons/arrow-narrow-right.svg' | theme }}" alt="Arrow right icon" loading="lazy"/>
+    </button>
+
+    <button class="hidden lg:flex items-center justify-center text-secondary hover:bg-secondary-lightest bg-white w-16 h-16 text-lg shadow-lg rounded-full transition-all absolute -bottom-8 transform right-0 js-goto-next-slide cursor-pointer" type="button" name="Go to Next Slide" title="Go to Next Slide">
+      <img class="inline-block" src="{{ 'assets/icons/arrow-narrow-right.svg' | theme }}" alt="Arrow right icon" loading="lazy"/>
+    </button>
+
+  </div>
+
+</div>
+
+{% put scripts %}
+<!-- TODO:  switch slides on click -->
+<script type="text/javascript">
+
+  /*
+  Click on .js-switch-slide takes href attribute and shows .js-slide with ID attribute matching href atribute
+  */
+
+  // console.log("page is fully loaded");
+
+  // window.addEventListener("load", (event) => {
+  //      console.log("page is fully loaded");
+  //  });
+
+
+     document.addEventListener('DOMContentLoaded', function () {
+
+        const slider = document.querySelector('.js-slider-overflow');
+        const prevButton = document.querySelector('.js-goto-prev-slide');
+        const nextButton = document.querySelector('.js-goto-next-slide');
+        const scrollAmount = 300; // Adjust scroll amount as needed
+
+        // Scroll to the left
+        prevButton.addEventListener('click', function () {
+
+            console.log('prevButton');
+
+          slider.scrollBy({
+            left: -scrollAmount,
+            behavior: 'smooth',
+          });
+          
+        });
+
+        // Scroll to the right
+        nextButton.addEventListener('click', function () {
+            console.log('nextButton');
+
+          slider.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth',
+          });
+        });
+    });
+
+</script>
+{% endput %}";s:5:"mtime";i:1778867854;s:6:"markup";s:4659:"<div class="{{ section.container_style }} px-4 py-16">
+
+  {% if section.title %}
+    <h2 class="mb-12 text-center mx-auto max-w-2xl">
+      {{ section.title | raw }}
+    </h2>
+  {% endif %}
+
+  <div class="relative js-slider-wrap">
+
+    <div class="js-slider-overflow overflow-scroll gap-6 pb-16 flex flex-nowrap w-screen-2x -ml-96 pl-96 pr-48">
+
+        {% for item in section.items %}
+        <article class="js-slide card shrink-0 w-80 sm:w-96  flex flex-col bg-white rounded-xl shadow-lg overflow-hidden transition ease-out duration-300">
+           <a href="{{ item.button_page | link  }}" {{ item.button_external ? 'target="_blank" rel="noopener"' }} class="card_img h-44 w-full overflow-hidden relative">
+               <img class="w-full h-full object-cover" src="{{ item.image | media }}" alt="{{ item.image | replace({ '_' : ' ', '/site-images/' : '', '.webp' : '' }) }}" loading="lazy" />
+           </a>
+           <div class="p-4 flex-1 flex flex-col">
+               <h3 class="text-xl font-bold mb-2">
+                 {{ item.title }}
+               </h3>
+               <div class="mb-4 text-gray text-sm lg:text-base">
+                 {{ item.content | content }}
+               </div>
+               <div class="mt-auto">
+                   <a class="inline-flex items-center gap-2 font-bold bg-secondary bg-opacity-5 text-primary transition ease-out duration-300 hover:!bg-secondary hover:!text-white rounded-full px-5 py-2.5" href="{{ item.button_page | link  }}" {{ item.button_external ? 'target="_blank" rel="noopener"' }}>
+                       {{ item.button_title ?? 'Saznajte više' }}
+                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path class="transition ease-out duration-300 fill-primary" d="M14.7071 5.29289C14.3166 4.90237 13.6834 4.90237 13.2929 5.29289C12.9024 5.68342 12.9024 6.31658 13.2929 6.70711L17.5858 11H4C3.44772 11 3 11.4477 3 12C3 12.5523 3.44772 13 4 13H17.5858L13.2929 17.2929C12.9024 17.6834 12.9024 18.3166 13.2929 18.7071C13.6834 19.0976 14.3166 19.0976 14.7071 18.7071L20.7071 12.7071C21.0976 12.3166 21.0976 11.6834 20.7071 11.2929L14.7071 5.29289Z" />
+                       </svg>
+                   </a>
+               </div>
+           </div>
+       </article>
+        {% endfor %}
+
+    </div>
+
+    <button class="hidden lg:flex items-center justify-center text-secondary hover:bg-secondary-lightest bg-white w-16 h-16 text-md shadow-lg rounded-full transition-all absolute -bottom-8 transform left-0 js-goto-prev-slide cursor-pointer" type="button" name="Go to Next Slide" title="Go to Next Slide">
+      <img class="inline-block transform origin-center rotate-180" src="{{ 'assets/icons/arrow-narrow-right.svg' | theme }}" alt="Arrow right icon" loading="lazy"/>
+    </button>
+
+    <button class="hidden lg:flex items-center justify-center text-secondary hover:bg-secondary-lightest bg-white w-16 h-16 text-lg shadow-lg rounded-full transition-all absolute -bottom-8 transform right-0 js-goto-next-slide cursor-pointer" type="button" name="Go to Next Slide" title="Go to Next Slide">
+      <img class="inline-block" src="{{ 'assets/icons/arrow-narrow-right.svg' | theme }}" alt="Arrow right icon" loading="lazy"/>
+    </button>
+
+  </div>
+
+</div>
+
+{% put scripts %}
+<!-- TODO:  switch slides on click -->
+<script type="text/javascript">
+
+  /*
+  Click on .js-switch-slide takes href attribute and shows .js-slide with ID attribute matching href atribute
+  */
+
+  // console.log("page is fully loaded");
+
+  // window.addEventListener("load", (event) => {
+  //      console.log("page is fully loaded");
+  //  });
+
+
+     document.addEventListener('DOMContentLoaded', function () {
+
+        const slider = document.querySelector('.js-slider-overflow');
+        const prevButton = document.querySelector('.js-goto-prev-slide');
+        const nextButton = document.querySelector('.js-goto-next-slide');
+        const scrollAmount = 300; // Adjust scroll amount as needed
+
+        // Scroll to the left
+        prevButton.addEventListener('click', function () {
+
+            console.log('prevButton');
+
+          slider.scrollBy({
+            left: -scrollAmount,
+            behavior: 'smooth',
+          });
+          
+        });
+
+        // Scroll to the right
+        nextButton.addEventListener('click', function () {
+            console.log('nextButton');
+
+          slider.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth',
+          });
+        });
+    });
+
+</script>
+{% endput %}";s:4:"code";N;}}

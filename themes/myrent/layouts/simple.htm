@@ -1,0 +1,58 @@
+description = "Simple Layout for Page Entries & CMS Pages"
+title = "Simple"
+
+[resources]
+
+[baseComponent]
+
+[global sitemap]
+handle = "Content\SEO\SiteMap"
+
+[section]
+handle = "Content\Page"
+
+[cookiesBar]
+[cookiesManage]
+==
+
+<!DOCTYPE html>
+<html lang="hr">
+    <head>
+
+        {% partial 'site/meta' %}
+        {% partial 'site/favicon' %}
+        {% partial 'site/styles' %}
+        {% partial 'tracking/gtag-head' %}
+
+    </head>
+    <body class="page-{{ this.page.id }} page-{{ section.slug }}">
+
+        {% partial 'tracking/gtag-body' %}
+       {{ sitemap.body_code|raw }}
+
+        {% partial 'layout/sticky-bar' %}
+
+        <div class="site-wrapper">
+
+          <header class="site-header">
+            {% partial 'layout/header' %}
+          </header>
+
+          <main class="site-content">
+              {% page %}
+          </main>
+
+          <footer class="site-footer">
+            {% partial 'layout/footer' %}
+          </footer>
+
+        </div>
+
+        {% partial 'site/scripts' %}
+
+        <!-- Cookie Bars -->
+        {% component 'cookiesBar' %}
+        {% component 'cookiesManage' %}
+
+    </body>
+</html>

@@ -1,0 +1,5 @@
+<{{ section.html_tag }} id="{{ section.html_anchor }}" class="overflow-hidden {{ section.css_classes |join(' ') }}">
+
+  {% partial 'builder/partials/card-slider-' ~ section.layout  section=section %}
+
+</{{ section.html_tag }}>

@@ -1,0 +1,46 @@
+body {
+    @apply font-sans text-base font-normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+    margin: 0;
+}
+
+button, input, select, textarea {
+  appearance:none;
+}
+
+button > * {
+  pointer-events: none;
+}
+
+[role=button],
+button {
+    cursor: pointer;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.hover\:filter-none {
+  &:hover {
+    filter: none;
+
+    img {
+      filter: none;
+    }
+  }
+}
+
+.rich-em {
+  em {
+    @apply text-secondary;
+    font-style: normal;
+  }
+}
+
+em {
+  @apply text-secondary;
+  font-style: normal;
+}

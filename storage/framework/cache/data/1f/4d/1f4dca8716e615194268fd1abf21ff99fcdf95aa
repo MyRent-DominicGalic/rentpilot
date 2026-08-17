@@ -1,0 +1,251 @@
+1787058115a:1:{s:22:"layout/mobile-menu.htm";a:6:{s:8:"fileName";s:22:"layout/mobile-menu.htm";s:7:"content";s:4425:"[sitePicker]
+==
+
+{% set items = settings.main_menu.links %}
+
+<nav id="mobile-menu">
+
+
+    <ul>
+      {% for item in items %}
+        {% if item.is_enabled %}
+          {% if not item.parent_id %}
+            {% if item.children | length %}
+              <li>
+                  <span>{{ item.title }}</span>
+                  <ul>
+                      {% for item in item.children %}
+                        {% if item.children | length %}
+                        <li>
+                            <span class="flexed-wrap">
+                              <span class="flexed">
+                                <img width="40" height="40" src="{{ ('assets/icons/' ~ item.icon ~ '.svg')| theme }}" alt="icon" />
+                                {{ item.title }}
+                              </span>
+                            </span>
+                            <ul>
+                              {% for item in item.children %}
+                                {% if item.children | length %}
+                                <span>
+                                    {{ item.title }}
+                                </span>
+                                <ul>
+                                  {% for item in item.children %}
+                                  <li>
+                                    <a href="{{ item.page | link }}" {{ item.external ? 'target="_blank" rel="noopener" '}}>{{ item.title }}</a>
+                                  </li>
+                                  {% endfor %}
+                                </ul>
+                                {% else %}
+                                <li>
+                                  <a href="{{ item.page | link }}" {{ item.external ? 'target="_blank" rel="noopener" '}}>{{ item.title }}</a>
+                                </li>
+                                {% endif %}
+                              {% endfor %}
+                            </ul>
+                        </li>
+                        {% else %}
+                        <li>
+                          <a href="{{ item.page | link }}" {{ item.external ? 'target="_blank" rel="noopener" '}}>{{ item.title }}</a>
+                        </li>
+                        {% endif %}
+                      {% endfor %}
+                  </ul>
+              </li>
+            {% else %}
+              <li>
+                <a href="{{ item.page | link }}" {{ item.external ? 'target="_blank" rel="noopener" '}}>{{ item.title }}</a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+      <li>
+          <span>
+            Jezik
+          </span>
+          <ul>
+            {% for site in sitePicker.sites %}
+            <li>
+              <a class="flexed items-center gap-2" href="{{ site.url }}">
+                <img width="24" height="24" src="{{ ('assets/icons/flag-' ~ site.code ~ '.svg')|theme }}" alt="flag" />
+                {{ site.name }}
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+      </li>
+      <li>
+        <a class="link-try-free" href="{{ settings.try_free_button | link }}" {{ item.external ? 'target="_blank" rel="noopener" '}}>Isprobaj besplatno</a>
+      </li>
+      <li class="link-last">
+        <a class="link-login" href="https://app.my-rent.net/users/logi" {{ item.external ? 'target="_blank" rel="noopener" '}}>
+          <img width="24" height="24" src="{{ 'assets/icons/log-in.svg'|theme }}" alt="Login icon" loading="lazy" />
+          Prijavi se
+        </a>
+      </li>
+
+    </ul>
+
+
+</nav>
+
+
+{% put scripts %}
+<style media="screen">
+  .mm-ocd-opened .menu-icon {
+    display: none!important;
+  }
+  .mm-ocd-opened .close-icon {
+    display: block!important;
+  }
+
+</style>
+<script type="text/javascript">
+    var menu = new MmenuLight(document.querySelector("#mobile-menu"), "all");
+
+    var navigator = menu.navigation({
+         slidingSubmenus: true,
+    });
+
+    var drawer = menu.offcanvas({
+    });
+
+    //	Open the menu.
+    document
+        .querySelector('.js-sidemenu-trigger')
+        .addEventListener("click", (e) => {
+            e.preventDefault();
+          if(document.body.classList.contains('mm-ocd-opened')) {
+            drawer.close()
+          } else {
+            drawer.open()
+          }
+        });
+
+</script>
+{% endput %}
+";s:5:"mtime";i:1778867854;s:6:"markup";s:4403:"{% set items = settings.main_menu.links %}
+
+<nav id="mobile-menu">
+
+
+    <ul>
+      {% for item in items %}
+        {% if item.is_enabled %}
+          {% if not item.parent_id %}
+            {% if item.children | length %}
+              <li>
+                  <span>{{ item.title }}</span>
+                  <ul>
+                      {% for item in item.children %}
+                        {% if item.children | length %}
+                        <li>
+                            <span class="flexed-wrap">
+                              <span class="flexed">
+                                <img width="40" height="40" src="{{ ('assets/icons/' ~ item.icon ~ '.svg')| theme }}" alt="icon" />
+                                {{ item.title }}
+                              </span>
+                            </span>
+                            <ul>
+                              {% for item in item.children %}
+                                {% if item.children | length %}
+                                <span>
+                                    {{ item.title }}
+                                </span>
+                                <ul>
+                                  {% for item in item.children %}
+                                  <li>
+                                    <a href="{{ item.page | link }}" {{ item.external ? 'target="_blank" rel="noopener" '}}>{{ item.title }}</a>
+                                  </li>
+                                  {% endfor %}
+                                </ul>
+                                {% else %}
+                                <li>
+                                  <a href="{{ item.page | link }}" {{ item.external ? 'target="_blank" rel="noopener" '}}>{{ item.title }}</a>
+                                </li>
+                                {% endif %}
+                              {% endfor %}
+                            </ul>
+                        </li>
+                        {% else %}
+                        <li>
+                          <a href="{{ item.page | link }}" {{ item.external ? 'target="_blank" rel="noopener" '}}>{{ item.title }}</a>
+                        </li>
+                        {% endif %}
+                      {% endfor %}
+                  </ul>
+              </li>
+            {% else %}
+              <li>
+                <a href="{{ item.page | link }}" {{ item.external ? 'target="_blank" rel="noopener" '}}>{{ item.title }}</a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+      <li>
+          <span>
+            Jezik
+          </span>
+          <ul>
+            {% for site in sitePicker.sites %}
+            <li>
+              <a class="flexed items-center gap-2" href="{{ site.url }}">
+                <img width="24" height="24" src="{{ ('assets/icons/flag-' ~ site.code ~ '.svg')|theme }}" alt="flag" />
+                {{ site.name }}
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+      </li>
+      <li>
+        <a class="link-try-free" href="{{ settings.try_free_button | link }}" {{ item.external ? 'target="_blank" rel="noopener" '}}>Isprobaj besplatno</a>
+      </li>
+      <li class="link-last">
+        <a class="link-login" href="https://app.my-rent.net/users/logi" {{ item.external ? 'target="_blank" rel="noopener" '}}>
+          <img width="24" height="24" src="{{ 'assets/icons/log-in.svg'|theme }}" alt="Login icon" loading="lazy" />
+          Prijavi se
+        </a>
+      </li>
+
+    </ul>
+
+
+</nav>
+
+
+{% put scripts %}
+<style media="screen">
+  .mm-ocd-opened .menu-icon {
+    display: none!important;
+  }
+  .mm-ocd-opened .close-icon {
+    display: block!important;
+  }
+
+</style>
+<script type="text/javascript">
+    var menu = new MmenuLight(document.querySelector("#mobile-menu"), "all");
+
+    var navigator = menu.navigation({
+         slidingSubmenus: true,
+    });
+
+    var drawer = menu.offcanvas({
+    });
+
+    //	Open the menu.
+    document
+        .querySelector('.js-sidemenu-trigger')
+        .addEventListener("click", (e) => {
+            e.preventDefault();
+          if(document.body.classList.contains('mm-ocd-opened')) {
+            drawer.close()
+          } else {
+            drawer.open()
+          }
+        });
+
+</script>
+{% endput %}";s:4:"code";N;s:10:"sitePicker";a:0:{}}}

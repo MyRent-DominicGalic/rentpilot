@@ -1,0 +1,43 @@
+1763716671a:1:{s:32:"builder/sections/images_list.htm";a:5:{s:8:"fileName";s:32:"builder/sections/images_list.htm";s:7:"content";s:1004:"<{{ section.html_tag }} id="{{ section.html_anchor }}" class="overflow-hidden {{ section.css_classes |join(' ') }}">
+
+  <div class="{{ section.container_style }}">
+
+    <div class="px-4 pt-6 pb-12 flex justify-center items-center flex-wrap gap-10">
+
+        {% for item in section.images %}
+            {% if item.page %}
+            <a href="{{ item.page | link }}">
+            {% endif %}
+              <img class="filter grayscale transition-all hover:filter-none" width="140" height="80" src="{{ item.image | media }}" loading="lazy" alt="{{ item.title | replace({ '<em>' : '', '</em>' : '' }) | raw }} {{ item.image | replace({ '-' : ' ', '_' : ' ', '/site-images/' : '', '.webp' : '' }) }}" title="{{ item.title | replace({ '<em>' : '', '</em>' : '' }) | raw }} {{ item.image | replace({ '-' : ' ', '_' : ' ', '/site-images/' : '', '.webp' : '' }) }}" />
+            {% if item.page %}
+            </a>
+            {% endif %}
+        {% endfor %}
+
+    </div>
+
+  </div>
+
+
+</{{ section.html_tag }}>";s:5:"mtime";i:1763630250;s:6:"markup";s:1004:"<{{ section.html_tag }} id="{{ section.html_anchor }}" class="overflow-hidden {{ section.css_classes |join(' ') }}">
+
+  <div class="{{ section.container_style }}">
+
+    <div class="px-4 pt-6 pb-12 flex justify-center items-center flex-wrap gap-10">
+
+        {% for item in section.images %}
+            {% if item.page %}
+            <a href="{{ item.page | link }}">
+            {% endif %}
+              <img class="filter grayscale transition-all hover:filter-none" width="140" height="80" src="{{ item.image | media }}" loading="lazy" alt="{{ item.title | replace({ '<em>' : '', '</em>' : '' }) | raw }} {{ item.image | replace({ '-' : ' ', '_' : ' ', '/site-images/' : '', '.webp' : '' }) }}" title="{{ item.title | replace({ '<em>' : '', '</em>' : '' }) | raw }} {{ item.image | replace({ '-' : ' ', '_' : ' ', '/site-images/' : '', '.webp' : '' }) }}" />
+            {% if item.page %}
+            </a>
+            {% endif %}
+        {% endfor %}
+
+    </div>
+
+  </div>
+
+
+</{{ section.html_tag }}>";s:4:"code";N;}}

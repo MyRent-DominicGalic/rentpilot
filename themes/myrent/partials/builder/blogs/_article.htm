@@ -1,0 +1,21 @@
+<article class="card shrink-0 w-full sm:w-96  flex flex-col bg-white rounded-xl shadow-lg overflow-hidden transition ease-out duration-300">
+   <a href="{{ 'post' | page({ slug: item.slug }) }}" class="card_img h-44 w-full overflow-hidden relative">
+       <img width="384" height="256" class="w-full h-full object-cover" src="{{ item.banner ? item.banner | media : 'assets/images/no-image.png' | theme }}" alt="{{ item.banner ? item.banner | split('/') | last | replace({ '_' : ' ', '/site-images/' : '', '.webp' : '', '.jpg' : '', '.png' : '' }) : 'assets/images/no-image.png' | theme }}" loading="lazy" />
+   </a>
+   <div class="p-4 flex-1 flex flex-col">
+       <h3 class="text-xl font-bold mb-2">
+         {{ item.title | raw }}
+       </h3>
+       <div class="rich-em mb-4 text-gray text-sm lg:text-base h-24">
+         {{ item.featured_text | str_limit(200) | striptags }}
+       </div>
+       <div class="mt-6">
+           <a class="inline-flex items-center gap-2 font-bold bg-secondary bg-opacity-5 text-primary transition ease-out duration-300 hover:!bg-secondary hover:!text-white rounded-full px-5 py-2.5" href="{{ 'post' | page({ slug: item.slug }) }}">
+               Pročitaj više
+               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                   <path class="transition ease-out duration-300 fill-primary" d="M14.7071 5.29289C14.3166 4.90237 13.6834 4.90237 13.2929 5.29289C12.9024 5.68342 12.9024 6.31658 13.2929 6.70711L17.5858 11H4C3.44772 11 3 11.4477 3 12C3 12.5523 3.44772 13 4 13H17.5858L13.2929 17.2929C12.9024 17.6834 12.9024 18.3166 13.2929 18.7071C13.6834 19.0976 14.3166 19.0976 14.7071 18.7071L20.7071 12.7071C21.0976 12.3166 21.0976 11.6834 20.7071 11.2929L14.7071 5.29289Z" />
+               </svg>
+           </a>
+       </div>
+   </div>
+</article>

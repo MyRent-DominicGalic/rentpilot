@@ -1,0 +1,94 @@
+1763717847a:1:{s:20:"site/jsonld-home.htm";a:5:{s:8:"fileName";s:20:"site/jsonld-home.htm";s:7:"content";s:1119:"<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "name": "Turistička zajednica Podgora",
+  "image": "https://tz-podgora.hr/themes/tz-podgora/assets/images/logo.png",
+  "url": "https://tz-podgora.hr/",
+  "telephone": "+385 21 678 942",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "A.Kačića Miošića br. 2",
+    "addressLocality": "Podgora",
+    "postalCode": "21327",
+    "addressCountry": "HR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 43.241164,
+    "longitude": 17.076718
+  },
+   "aggregateRating": {
+  "@type": "AggregateRating",
+  "ratingValue": "4.9",
+  "bestRating": "5",
+  "worstRating": "3",
+  "ratingCount": "298"
+ },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "08:00",
+    "closes": "22:00"
+  },
+  "sameAs": [
+    "https://www.facebook.com/visitpodgora",
+    "https://www.instagram.com/visit_podgora/"
+  ]
+}
+</script>
+";s:5:"mtime";i:1763630250;s:6:"markup";s:1118:"<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "name": "Turistička zajednica Podgora",
+  "image": "https://tz-podgora.hr/themes/tz-podgora/assets/images/logo.png",
+  "url": "https://tz-podgora.hr/",
+  "telephone": "+385 21 678 942",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "A.Kačića Miošića br. 2",
+    "addressLocality": "Podgora",
+    "postalCode": "21327",
+    "addressCountry": "HR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 43.241164,
+    "longitude": 17.076718
+  },
+   "aggregateRating": {
+  "@type": "AggregateRating",
+  "ratingValue": "4.9",
+  "bestRating": "5",
+  "worstRating": "3",
+  "ratingCount": "298"
+ },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "08:00",
+    "closes": "22:00"
+  },
+  "sameAs": [
+    "https://www.facebook.com/visitpodgora",
+    "https://www.instagram.com/visit_podgora/"
+  ]
+}
+</script>";s:4:"code";N;}}

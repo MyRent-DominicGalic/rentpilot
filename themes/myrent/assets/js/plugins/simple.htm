@@ -1,0 +1,49 @@
+description = "Simple Layout for Page Entries & CMS Pages"
+title = "Simple"
+
+[resources]
+
+[baseComponent]
+
+[global]
+handle = "Content\Settings"
+==
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        {% partial 'site/meta' %}
+        {% partial 'site/favicon' %}
+        {% partial 'site/styles' %}
+        {% partial 'tracking/conversion-booking' %}
+        {% partial 'tracking/gtag-head' %}
+
+    </head>
+    <body>
+
+      {% partial 'tracking/gtag-body' %}
+
+      <div class="site-wrapper">
+
+        <div class="background background--mobile">
+          {% partial '_assets/static-bg-mobile' %}
+        </div>
+        <div class="background background--desktop">
+          {% partial '_assets/static-bg-desktop' %}
+        </div>
+
+        <main class="site-content">
+            {% page %}
+        </main>
+
+        <footer class="site-footer">
+          {% partial 'layout/footer' %}
+        </footer>
+
+      </div>
+
+      {% partial 'site/scripts' %}
+
+    </body>
+</html>

@@ -1,0 +1,18 @@
+<section class="bg-secondary bg-opacity-5">
+    <div class="container px-4 py-16">
+        <h2 class="mb-12 text-center">Personalizirana rješenja za sve <span class="text-secondary"><br/>tipove iznajmljivača</span></h2>
+
+        {# List of cards #}
+        <div class="grid grid-cols-3 gap-4">
+
+            {# Card #}
+            {% for i in 0..2 %} 
+
+                {% include '../_card.twig' %}
+                        
+            {% endfor %}
+
+        </div>
+
+    </div>
+</section>

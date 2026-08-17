@@ -1,0 +1,20 @@
+<section class="container px-4 pb-6 lg:pb-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        {% for i in 0..5 %}
+
+            {% include '../_card.twig' %}
+
+        {% endfor %}
+
+        {# No result #}
+        <div class="col-span-3 pt-6 lg:pt-20 pb-28 text-center">
+            <div class="max-w-sm w-full mx-auto">
+                <img class="mx-auto" width="200" height="171" src="/assets/icons/seo-browser-2-streamline.svg" alt="icon browser" />
+                <h4 class="mb-2">Nema rezultata</h4>
+                <p>Nažalost, nismo uspjeli pronaći rezultate koji odgovaraju vašem upitu. Provjerite pravopis ili pokušajte s drugom ključnom riječi.</p>
+            </div>
+        </div>
+
+    </div>
+</section>

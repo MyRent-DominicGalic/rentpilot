@@ -1,0 +1,38 @@
+url = "/sitemap.xml"
+title = "Sitemap"
+
+[collection pages]
+handle = "Content\Page"
+
+[collection posts]
+handle = "Blog\Post"
+
+[global settings]
+handle = "Content\Settings"
+
+[resources]
+headers[Content-Type] = 'application/xml'
+==
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	{% for page in pages.where('exclude_in_sitemap', false).where('is_enabled', true).get() %}
+		<url>
+			{% if (settings.homepage.id == page.id) and (settings.homepage.slug == page.slug) %}
+	    	<loc>{{ '/'|app }}</loc>
+			{% else %}
+			<loc>{{ 'page'|page({fullslug: (page.fullslug|length ? page.fullslug : page.slug) }) }}</loc>
+			{% endif %}
+	    	<lastmod>{{ page.updated_at|date('c') }}</lastmod>
+	    	<changefreq>{{ page.change_frequency|length ? page.change_frequency : '0.8' }}</changefreq>
+	    	<priority>{{ page.priority|length ? page.priority : 'always' }}</priority>
+	    </url>
+	{% endfor %}
+	{% for post in posts.where('exclude_in_sitemap', false).where('is_enabled', true).get() %}
+		<url>
+	    	<loc>{{ 'post'|page({slug: post.slug}) }}</loc>
+	    	<lastmod>{{ post.updated_at|date('c') }}</lastmod>
+	    	<changefreq>{{ post.change_frequency|length ? post.change_frequency : '0.8' }}</changefreq>
+	    	<priority>{{ post.priority|length ? post.priority : 'always' }}</priority>
+	    </url>
+	{% endfor %}
+</urlset>

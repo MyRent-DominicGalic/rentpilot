@@ -1,0 +1,103 @@
+<{{ section.html_tag }} id="{{ section.html_anchor }}" class="{{ section.css_classes |join(' ') }}">
+
+    <div class="{{ section.container_style }}">
+
+      <section class="container px-4 py-10">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+              <div>
+                  <h1 class="mb-2">
+                    {{ section.title | raw }}
+                  </h1>
+                  <p class="font-medium text-gray max-w-xl w-full">
+                    {{ section.content | raw }}
+                  </p>
+              </div>
+              <div class="rounded-lg shadow-lg px-5 lg:px-8 py-5">
+                  <h2 class="text-xl font-bold mb-4">{{ 'Primarni kontakt' |_ }}</h2>
+                  <div class="flex flex-wrap gap-4">
+                      <a class="flex items-center gap-2" href="tel:{{ page_settings.contact_phone }}">
+                          <img width="24" height="24" src="{{ 'assets/icons/phone-3.svg'| theme }}" alt="Phone icon" />
+                          <span class="text-gray-dark text-lg font-medium">{{ page_settings.contact_phone }}</span>
+                      </a>
+                      <a class="flex items-center gap-2" href="mailto:{{ html_email(page_settings.contact_email) }}">
+                          <img width="24" height="24" src="{{ 'assets/icons/mail-4.svg'| theme }}" alt="Email icon" />
+                          <span class="text-gray-dark text-lg font-medium">{{ html_email(page_settings.contact_email) }}</span>
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+    </div>
+
+
+    <section class="container px-4 pb-10">
+
+        <div class="grid grid-cols-12 gap-6">
+
+            <div class="order-2 lg:order-1 col-span-12 lg:col-span-7">
+
+                <div class="rounded-lg flex items-center justify-center mb-6">
+                    {{ section.map_embed | raw }}
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                    {% for item in section.sectors %}
+                    <div class="rounded-lg shadow-lg p-4">
+                        <h3 class="text-lg lg:text-xl font-bold mb-4">{{ item.title }}</h3>
+                        <ul class="flex flex-col gap-2 font-medium text-gray-dark">
+                            <li>{{ item.company }}</li>
+                            <li>{{ item.address | nl2br }}</li>
+                            <li>OIB: {{ item.vat }}</li>
+                        </ul>
+                    </div>
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+            <div class="order-1 lg:order-2 col-span-12 lg:col-span-5">
+
+                {% partial 'tailor_modules/form' code = section.forms.slug %}
+
+            </div>
+
+        </div>
+
+    </section>
+
+    {% if section.branches | length %}
+    <section class="container px-4 pt-10 pb-20">
+        <h2 class="mb-16 text-center">Kontakti po državama</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+            {% for item in section.branches %}
+            <div class="grid grid-cols-1 lg:grid-cols-2 rounded-lg shadow-lg overflow-hidden">
+                <div class="flex">
+                    <img class="w-full flex-1 h-44 lg:h-auto object-cover" src="{{ item.image | media }}" alt="{{ item.image | replace({ '_' : ' ', '/site-images/' : '', '.webp' : '' }) }}" loading="lazy" />
+                </div>
+                <div class="p-5 pl-6">
+                    <div class="text-lg lg:text-xl font-bold mb-5">{{ item.title }}</div>
+                    <a href="tel:{{ item.phone }}" class="flex items-center gap-1.5 mb-4">
+                        <img width="24" height="24" src="{{ 'assets/icons/phone.svg'| theme }}" alt="Phone icon" />
+                        {{ item.phone }}
+                    </a>
+                    <a href="mailto:{{ html_email(item.email) }}" class="flex items-center gap-1.5 mb-4">
+                        <img width="24" height="24" src="{{ 'assets/icons/mail-2.svg'| theme }}" alt="Email icon" />
+                        {{ html_email(item.email) }}
+                    </a>
+                    <a href="mailto:{{ html_email(item.email_alt) }}" class="flex items-center gap-1.5">
+                        <img width="24" height="24" src="{{ 'assets/icons/mail-2.svg'| theme }}" alt="Email icon" />
+                        {{ html_email(item.email_alt) }}
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </section>
+    {% endif %}
+
+</{{ section.html_tag }}>

@@ -1,0 +1,28 @@
+<script type="text/javascript" defer async>
+    // Modal
+    var modal = document.getElementById("js--CookiesModal");
+
+    // When the user clicks the button, open the modal
+    var modalTrigger = document.querySelector('.js--modal-trigger');
+
+    if(modalTrigger) {
+       modalTrigger.addEventListener("click", function(event) {
+          event.preventDefault();
+          modal.style.display = "block";
+      }, false);
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    document.querySelectorAll('.js--modal-close').forEach(item => {
+        item.addEventListener('click', event => {
+            modal.style.display = "none";
+        })
+    });
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>

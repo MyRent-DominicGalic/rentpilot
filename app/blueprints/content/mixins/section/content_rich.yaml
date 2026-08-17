@@ -1,0 +1,41 @@
+uuid: e77eeaff-0f6a-47ef-9d3e-e3f2e39ea351
+handle: Content\ContentRich
+type: mixin
+name: ContentRich
+fields:
+  title:
+    label: Title
+    commentAbove: Title of this section
+    type: text
+    span: left
+    tab: General
+  title_type:
+    label: Header Tag
+    commentAbove: Pick <h> tag for title
+    type: dropdown
+    default: h2
+    options:
+        h2: h2
+        h3: h3
+    span: right
+    tab: General
+  image:
+    label: Image
+    type: mediafinder
+    commentAbove: Image of this section
+    span: full
+    mode: image
+    maxItems: 1
+    tab: General
+  content:
+    label: Content
+    type: richeditor
+    commentAbove: Text content of this section
+    span: full
+    size: huge
+    tab: General
+  button:
+    type: mixin
+    source: Content\Buttons
+    commentAbove: Display link in your content as button. Use a Page or specify a link.
+    tab: General

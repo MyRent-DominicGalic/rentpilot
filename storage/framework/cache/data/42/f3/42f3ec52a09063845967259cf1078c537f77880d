@@ -1,1 +1,0 @@
-1753472433a:1:{s:6:"fields";a:2:{s:12:"shell_script";a:5:{s:4:"span";s:4:"left";s:4:"type";s:10:"codeeditor";s:5:"label";s:3:"Run";s:4:"size";s:5:"giant";s:8:"language";s:3:"php";}s:12:"shell_output";a:6:{s:4:"span";s:5:"right";s:4:"type";s:10:"codeeditor";s:5:"label";s:6:"Output";s:4:"size";s:5:"giant";s:8:"language";s:3:"php";s:8:"readOnly";b:1;}}}

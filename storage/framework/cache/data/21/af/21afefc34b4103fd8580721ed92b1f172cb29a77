@@ -1,1 +1,0 @@
-1740720505a:2:{s:6:"import";a:4:{s:5:"title";s:14:"Import Entries";s:4:"list";a:0:{}s:4:"form";a:0:{}s:10:"modelClass";s:31:"Tailor\Models\EntryRecordImport";}s:6:"export";a:3:{s:5:"title";s:14:"Export Entries";s:4:"list";a:0:{}s:10:"modelClass";s:31:"Tailor\Models\EntryRecordExport";}}

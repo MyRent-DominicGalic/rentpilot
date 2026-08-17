@@ -1,2 +1,0 @@
-1787058113a:1:{s:27:"builder/blogs/_ajaxlist.htm";a:5:{s:8:"fileName";s:27:"builder/blogs/_ajaxlist.htm";s:7:"content";s:42:"{% ajaxPartial 'builder/blogs/_posts' %}
-";s:5:"mtime";i:1778867853;s:6:"markup";s:40:"{% ajaxPartial 'builder/blogs/_posts' %}";s:4:"code";N;}}

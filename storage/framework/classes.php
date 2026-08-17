@@ -437,4 +437,13 @@
   'myrent\\gitdash\\Controllers\\changes' => 'plugins/myrent/gitdash/controllers/changes.php',
   'editor\\Controllers\\index' => 'modules/editor/controllers/index.php',
   'myrent\\gitdash\\Controllers\\deploy' => 'plugins/myrent/gitdash/controllers/deploy.php',
+  'system\\Controllers\\updates' => 'modules/system/controllers/updates.php',
+  'System\\Widgets\\Changelog' => 'modules/system/widgets/Changelog.php',
+  'System\\Widgets\\Updater' => 'modules/system/widgets/Updater.php',
+  'System\\Classes\\UiManager\\PopupButton' => 'modules/system/classes/uimanager/PopupButton.php',
+  'system\\Controllers\\market' => 'modules/system/controllers/market.php',
+  'System\\Classes\\ProductDetail' => 'modules/system/classes/ProductDetail.php',
+  'tailor\\Controllers\\entries' => 'modules/tailor/controllers/entries.php',
+  'tailor\\Controllers\\globals' => 'modules/tailor/controllers/globals.php',
+  'media\\Controllers\\index' => 'modules/media/controllers/index.php',
 );

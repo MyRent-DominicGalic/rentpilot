@@ -14,7 +14,7 @@ use Twig\Source;
 use Twig\Template;
 use Twig\TemplateWrapper;
 
-/* E:\faks\_zavrsni\zavrsni tailorblueprint\themes/myrent/partials/site/favicon.htm */
+/* E:\faks\_zavrsni\tailorblueprint\themes/myrent/partials/site/favicon.htm */
 class __TwigTemplate_f70677831d5165f9330084c8e2e8d84f extends Template
 {
     private Source $source;
@@ -42,9 +42,7 @@ class __TwigTemplate_f70677831d5165f9330084c8e2e8d84f extends Template
         yield "
     ";
         // line 14
-        yield "    <link rel=\"icon\" type=\"image/png\" href=\"";
-        yield $this->extensions['Cms\Twig\Extension']->themeFilter("assets/icons/favicon/favicon-96x96.png");
-        yield "\" sizes=\"96x96\" />
+        yield "
     ";
         // line 15
         if (Cms\Twig\GetAttrNode::customGetAttribute($this->env, $this->source, ($context["settings"] ?? null), "favicon", [], "any", false, false, false, 15)) {
@@ -61,16 +59,12 @@ class __TwigTemplate_f70677831d5165f9330084c8e2e8d84f extends Template
     ";
         }
         // line 20
-        yield "    <link rel=\"shortcut icon\" href=\"";
-        yield $this->extensions['Cms\Twig\Extension']->themeFilter("assets/icons/favicon/favicon.ico");
-        yield "\" />
-    <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"";
-        // line 21
+        yield "    <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"";
         yield $this->extensions['Cms\Twig\Extension']->themeFilter("assets/icons/favicon/apple-touch-icon.png");
         yield "\" />
     <meta name=\"apple-mobile-web-app-title\" content=\"MyRent\" />
     <link rel=\"manifest\" href=\"";
-        // line 23
+        // line 22
         yield $this->extensions['Cms\Twig\Extension']->themeFilter("assets/icons/favicon/site.webmanifest");
         yield "\" />";
         yield from [];
@@ -81,7 +75,7 @@ class __TwigTemplate_f70677831d5165f9330084c8e2e8d84f extends Template
      */
     public function getTemplateName(): string
     {
-        return "E:\\faks\\_zavrsni\\zavrsni tailorblueprint\\themes/myrent/partials/site/favicon.htm";
+        return "E:\\faks\\_zavrsni\\tailorblueprint\\themes/myrent/partials/site/favicon.htm";
     }
 
     /**
@@ -97,7 +91,7 @@ class __TwigTemplate_f70677831d5165f9330084c8e2e8d84f extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  74 => 23,  69 => 21,  64 => 20,  58 => 18,  52 => 16,  50 => 15,  45 => 14,  42 => 2,);
+        return array (  68 => 22,  62 => 20,  56 => 18,  50 => 16,  48 => 15,  45 => 14,  42 => 2,);
     }
 
     public function getSourceContext(): Source
@@ -115,15 +109,14 @@ class __TwigTemplate_f70677831d5165f9330084c8e2e8d84f extends Template
         <link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"{{ settings.favicon_dark|media|resize(16) }}\">
     {% endif %}
     #}
-    <link rel=\"icon\" type=\"image/png\" href=\"{{'assets/icons/favicon/favicon-96x96.png' | theme }}\" sizes=\"96x96\" />
+
     {% if settings.favicon %}
-    <link rel=\"icon\" type=\"image/svg+xml\" href=\"{{ settings.favicon|media }}\" />
+    <link rel=\"icon\" type=\"image/svg+xml\" href=\"{{ settings.favicon | media }}\" />
     {% else %}
     <link rel=\"icon\" type=\"image/svg+xml\" href=\"{{'assets/icons/favicon/favicon.svg' | theme }}\" />
     {% endif %}
-    <link rel=\"shortcut icon\" href=\"{{'assets/icons/favicon/favicon.ico' | theme }}\" />
     <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"{{'assets/icons/favicon/apple-touch-icon.png' | theme }}\" />
     <meta name=\"apple-mobile-web-app-title\" content=\"MyRent\" />
-    <link rel=\"manifest\" href=\"{{'assets/icons/favicon/site.webmanifest' | theme }}\" />", "E:\\faks\\_zavrsni\\zavrsni tailorblueprint\\themes/myrent/partials/site/favicon.htm", "");
+    <link rel=\"manifest\" href=\"{{'assets/icons/favicon/site.webmanifest' | theme }}\" />", "E:\\faks\\_zavrsni\\tailorblueprint\\themes/myrent/partials/site/favicon.htm", "");
     }
 }

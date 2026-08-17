@@ -65,6 +65,7 @@ fields:
             options:
               simple: Simple
               overflow: Simple overflow
+              grid: Grid
               dynamic: Dynamic with nav
           items:
             type: repeater

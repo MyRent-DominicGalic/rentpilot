@@ -6,7 +6,7 @@
 
 <div class="{{ section.container_style }} px-4 relative z-10 mb-4">
 
-  <div class="flex flex-col lg:flex-row justify-center gap-3">
+  <div class="grid grid-cols-1 lg:grid-cols-3 justify-center gap-3">
 
       {% for item in section.items %}
       <a class="card_renter_sm flex flex-1 flex-col shadow-lg rounded-xl overflow-hidden bg-white" href="{{ item.button_page | link  }}" {{ item.button_external ? 'target="_blank" rel="noopener"' }}>

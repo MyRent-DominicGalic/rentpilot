@@ -318,6 +318,7 @@
                 array (
                   'simple' => 'Simple',
                   'overflow' => 'Simple overflow',
+                  'grid' => 'Grid',
                   'dynamic' => 'Dynamic with nav',
                 ),
               ),

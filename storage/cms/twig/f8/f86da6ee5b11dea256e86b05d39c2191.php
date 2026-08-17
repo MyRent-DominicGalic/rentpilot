@@ -14,8 +14,8 @@ use Twig\Source;
 use Twig\Template;
 use Twig\TemplateWrapper;
 
-/* E:\faks\_zavrsni\tailorblueprint\themes/myrent/partials/builder/partials/card-slider-simple.htm */
-class __TwigTemplate_344f7b255cd33938c87cf26e21ea183f extends Template
+/* E:\faks\_zavrsni\tailorblueprint\themes/myrent/partials/builder/partials/card-slider-grid.htm */
+class __TwigTemplate_e0519762131366ca297b761375c76de4 extends Template
 {
     private Source $source;
     /**
@@ -56,7 +56,7 @@ class __TwigTemplate_344f7b255cd33938c87cf26e21ea183f extends Template
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Cms\Twig\GetAttrNode::customGetAttribute($this->env, $this->source, ($context["section"] ?? null), "container_style", [], "any", false, false, false, 7), "html", null, true);
         yield " px-4 relative z-10 mb-4\">
 
-  <div class=\"flex flex-col lg:flex-row justify-center gap-3\">
+  <div class=\"grid grid-cols-1 lg:grid-cols-3 justify-center gap-3\">
 
       ";
         // line 11
@@ -105,7 +105,7 @@ class __TwigTemplate_344f7b255cd33938c87cf26e21ea183f extends Template
      */
     public function getTemplateName(): string
     {
-        return "E:\\faks\\_zavrsni\\tailorblueprint\\themes/myrent/partials/builder/partials/card-slider-simple.htm";
+        return "E:\\faks\\_zavrsni\\tailorblueprint\\themes/myrent/partials/builder/partials/card-slider-grid.htm";
     }
 
     /**
@@ -134,7 +134,7 @@ class __TwigTemplate_344f7b255cd33938c87cf26e21ea183f extends Template
 
 <div class=\"{{ section.container_style }} px-4 relative z-10 mb-4\">
 
-  <div class=\"flex flex-col lg:flex-row justify-center gap-3\">
+  <div class=\"grid grid-cols-1 lg:grid-cols-3 justify-center gap-3\">
 
       {% for item in section.items %}
       <a class=\"card_renter_sm flex flex-1 flex-col shadow-lg rounded-xl overflow-hidden bg-white\" href=\"{{ item.button_page | link  }}\" {{ item.button_external ? 'target=\"_blank\" rel=\"noopener\"' }}>
@@ -152,6 +152,6 @@ class __TwigTemplate_344f7b255cd33938c87cf26e21ea183f extends Template
 
   </div>
 
-</div>", "E:\\faks\\_zavrsni\\tailorblueprint\\themes/myrent/partials/builder/partials/card-slider-simple.htm", "");
+</div>", "E:\\faks\\_zavrsni\\tailorblueprint\\themes/myrent/partials/builder/partials/card-slider-grid.htm", "");
     }
 }

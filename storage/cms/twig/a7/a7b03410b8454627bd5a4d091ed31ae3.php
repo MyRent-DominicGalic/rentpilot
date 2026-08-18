@@ -14,7 +14,7 @@ use Twig\Source;
 use Twig\Template;
 use Twig\TemplateWrapper;
 
-/* E:\faks\_zavrsni\zavrsni tailorblueprint\themes/myrent/partials/builder/sections/nav_icons.htm */
+/* E:\faks\_zavrsni\tailorblueprint\themes/myrent/partials/builder/sections/nav_icons.htm */
 class __TwigTemplate_6ae2a1ade6af436b6797e36ae6f149bd extends Template
 {
     private Source $source;
@@ -56,7 +56,7 @@ class __TwigTemplate_6ae2a1ade6af436b6797e36ae6f149bd extends Template
         // line 5
         if (Cms\Twig\GetAttrNode::customGetAttribute($this->env, $this->source, ($context["section"] ?? null), "single_row", [], "any", false, false, false, 5)) {
             // line 6
-            yield "      <div class=\"grid grid-cols-2 lg:grid-cols-6\">
+            yield "      <div class=\"flex flex-col lg:flex-row justify-center gap-3\">
 
           ";
             // line 8
@@ -324,7 +324,7 @@ $context["loop"], "last", [], "any", false, false, false, 38)) {
      */
     public function getTemplateName(): string
     {
-        return "E:\\faks\\_zavrsni\\zavrsni tailorblueprint\\themes/myrent/partials/builder/sections/nav_icons.htm";
+        return "E:\\faks\\_zavrsni\\tailorblueprint\\themes/myrent/partials/builder/sections/nav_icons.htm";
     }
 
     /**
@@ -350,7 +350,7 @@ $context["loop"], "last", [], "any", false, false, false, 38)) {
   <div class=\"{{ section.container_style }} \">
 
       {% if section.single_row %}
-      <div class=\"grid grid-cols-2 lg:grid-cols-6\">
+      <div class=\"flex flex-col lg:flex-row justify-center gap-3\">
 
           {% for item in section.items %}
           <div class=\"text-center\">
@@ -415,6 +415,6 @@ $context["loop"], "last", [], "any", false, false, false, 38)) {
 
   </div>
 
-</{{ section.html_tag }}>", "E:\\faks\\_zavrsni\\zavrsni tailorblueprint\\themes/myrent/partials/builder/sections/nav_icons.htm", "");
+</{{ section.html_tag }}>", "E:\\faks\\_zavrsni\\tailorblueprint\\themes/myrent/partials/builder/sections/nav_icons.htm", "");
     }
 }

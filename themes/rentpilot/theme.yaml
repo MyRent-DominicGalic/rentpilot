@@ -1,8 +1,8 @@
-name: MyRent
-description: 'Theme for MyRent'
+name: RentPilot
+description: 'Theme for RentPilot'
 author: Epic
 homepage: 'https://epicdigital.eu'
 authorCode: ''
-code: ed-myrent
+code: ed-rentpilot
 parent: ''
 database: '0'

@@ -446,4 +446,5 @@
   'tailor\\Controllers\\entries' => 'modules/tailor/controllers/entries.php',
   'tailor\\Controllers\\globals' => 'modules/tailor/controllers/globals.php',
   'media\\Controllers\\index' => 'modules/media/controllers/index.php',
+  'backend\\Controllers\\users' => 'modules/backend/controllers/users.php',
 );

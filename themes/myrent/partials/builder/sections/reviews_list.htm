@@ -14,7 +14,9 @@
                       <div class="font-bold">{{ item.author }}</div>
                       <div class="font-medium text-sm text-gray">{{ item.company }}</div>
                   </div>
-                  <img class="filter grayscale" width="109" height="44" src="{{ item.logo | media }}" loading="lazy" alt="{{ item.author }} {{ item.company }} {{ section.image | replace({ '_' : ' ', '/site-images/' : '', '.webp' : '' }) }}" title="{{ item.author }} {{ item.company }} {{ section.image | replace({ '_' : ' ', '/site-images/' : '', '.webp' : '' }) }}" />
+                  {% if item.logo %}
+                    <img class="filter grayscale" width="109" height="44" src="{{ item.logo | media }}" loading="lazy" alt="{{ item.author }} {{ item.company }} {{ section.image | replace({ '_' : ' ', '/site-images/' : '', '.webp' : '' }) }}" title="{{ item.author }} {{ item.company }} {{ section.image | replace({ '_' : ' ', '/site-images/' : '', '.webp' : '' }) }}" />
+                  {% endif %}
               </div>
           </{{ item.url ? 'a' : 'div' }}>
           {% endfor %}

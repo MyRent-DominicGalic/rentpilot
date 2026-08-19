@@ -1,6 +1,5 @@
 [sitePicker]
 ==
-
 {% set items = settings.main_menu.links %}
 
 <nav id="mobile-menu">
@@ -60,30 +59,6 @@
           {% endif %}
         {% endif %}
       {% endfor %}
-      <li>
-          <span>
-            Jezik
-          </span>
-          <ul>
-            {% for site in sitePicker.sites %}
-            <li>
-              <a class="flexed items-center gap-2" href="{{ site.url }}">
-                <img width="24" height="24" src="{{ ('assets/icons/flag-' ~ site.code ~ '.svg')|theme }}" alt="flag" />
-                {{ site.name }}
-              </a>
-            </li>
-            {% endfor %}
-          </ul>
-      </li>
-      <li>
-        <a class="link-try-free" href="{{ settings.try_free_button | link }}" {{ item.external ? 'target="_blank" rel="noopener" '}}>Isprobaj besplatno</a>
-      </li>
-      <li class="link-last">
-        <a class="link-login" href="https://app.my-rent.net/users/logi" {{ item.external ? 'target="_blank" rel="noopener" '}}>
-          <img width="24" height="24" src="{{ 'assets/icons/log-in.svg'|theme }}" alt="Login icon" loading="lazy" />
-          Prijavi se
-        </a>
-      </li>
 
     </ul>
 

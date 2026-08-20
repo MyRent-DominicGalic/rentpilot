@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /cdn-cgi/
 
-Sitemap: https://myrent.hr/sitemap.xml
+Sitemap: https://rentpilot.myrent-hosting.eu/sitemap.xml

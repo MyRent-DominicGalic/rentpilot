@@ -1,4 +1,4 @@
-var siteName = 'myrent';
+var siteName = 'rentpilot';
 
 
 const path = require('path')

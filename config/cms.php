@@ -11,7 +11,7 @@ return [
     |
     */
 
-    'active_theme' => env('ACTIVE_THEME', 'myrent'),
+    'active_theme' => env('ACTIVE_THEME', 'rentpilot'),
 
     /*
     |--------------------------------------------------------------------------

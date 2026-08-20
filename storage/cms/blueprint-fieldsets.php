@@ -661,11 +661,6 @@
         'type' => 'richeditor',
         'span' => 'adaptive',
       ),
-      '_blog_article_content' => 
-      array (
-        'type' => 'mixin',
-        'source' => 'Knowledge\\ArticleContent',
-      ),
       'seo_fields' => 
       array (
         'tab' => 'Manage',
@@ -792,22 +787,6 @@
         'source' => 'Content\\CodeFields',
       ),
     ),
-  ),
-  '1e954298-5231-45d0-a25e-34e7e5802b06' => 
-  array (
-    'name' => 'Category',
-    'handle' => 'Knowledge\\Category',
-    'contentUuid' => '1e954298-5231-45d0-a25e-34e7e5802b06',
-    'fields' => 
-    array (
-      'description' => 
-      array (
-        'label' => 'Description',
-      ),
-    ),
-    'columns' => NULL,
-    'scopes' => NULL,
-    'validation' => NULL,
   ),
   'b5884275-919c-4496-8fb6-4f8e820c7c47' => 
   array (

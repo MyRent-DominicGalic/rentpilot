@@ -61,26 +61,6 @@
         2 => 'tailor.entry.912c5956878d11ed9699df30dbea9de3',
       ),
     ),
-    '0bc8c426-3eeb-4dd8-a082-d6605181af18' => 
-    array (
-      'label' => 'Knowledge',
-      'icon' => 'octo-icon-file',
-      'iconSvg' => 'modules/tailor/assets/images/blog-icon.svg',
-      'order' => 95,
-      '_theme' => NULL,
-      'uuid' => '0bc8c426-3eeb-4dd8-a082-d6605181af18',
-      'handle' => 'Knowledge\\Article',
-      'hasPrimary' => true,
-      'code' => 'entry_knowledge_article',
-      'url' => 'tailor/entries/knowledge_article',
-      'mode' => 'content',
-      'description' => NULL,
-      'permissionCode' => 
-      array (
-        0 => 'tailor.entry.0bc8c4263eeb4dd8a082d6605181af18',
-        1 => 'tailor.entry.1e954298523145d0a25e34e7e5802b06',
-      ),
-    ),
     'b5884275-919c-4496-8fb6-4f8e820c7c47' => 
     array (
       'label' => 'SEO',
@@ -222,44 +202,6 @@
         0 => 'tailor.entry.912c5956878d11ed9699df30dbea9de3',
       ),
       'parentCode' => 'entry_content_forms',
-    ),
-    '0bc8c426-3eeb-4dd8-a082-d6605181af18' => 
-    array (
-      'label' => 'Articles',
-      'icon' => 'octo-icon-pencil',
-      'order' => 100,
-      '_theme' => NULL,
-      'uuid' => '0bc8c426-3eeb-4dd8-a082-d6605181af18',
-      'handle' => 'Knowledge\\Article',
-      'hasPrimary' => true,
-      'code' => 'entry_knowledge_article',
-      'url' => 'tailor/entries/knowledge_article',
-      'mode' => 'content',
-      'description' => NULL,
-      'permissionCode' => 
-      array (
-        0 => 'tailor.entry.0bc8c4263eeb4dd8a082d6605181af18',
-      ),
-    ),
-    '1e954298-5231-45d0-a25e-34e7e5802b06' => 
-    array (
-      'label' => 'Categories',
-      'parent' => 'Knowledge\\Article',
-      'icon' => 'octo-icon-list-ul',
-      'order' => 150,
-      '_theme' => NULL,
-      'uuid' => '1e954298-5231-45d0-a25e-34e7e5802b06',
-      'handle' => 'Knowledge\\Category',
-      'hasPrimary' => false,
-      'code' => 'entry_knowledge_category',
-      'url' => 'tailor/entries/knowledge_category',
-      'mode' => 'content',
-      'description' => NULL,
-      'permissionCode' => 
-      array (
-        0 => 'tailor.entry.1e954298523145d0a25e34e7e5802b06',
-      ),
-      'parentCode' => 'entry_knowledge_article',
     ),
     'b5884275-919c-4496-8fb6-4f8e820c7c47' => 
     array (

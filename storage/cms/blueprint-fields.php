@@ -1775,40 +1775,4 @@
     ),
     'handleSlug' => 'content_section',
   ),
-  'e3df68b2-f675-4ae6-befa-422770a72bda' => 
-  array (
-    'uuid' => 'e3df68b2-f675-4ae6-befa-422770a72bda',
-    'handle' => 'Knowledge\\ArticleContent',
-    'type' => 'mixin',
-    'name' => 'Article Content',
-    'fields' => 
-    array (
-      'banner' => 
-      array (
-        'tab' => 'Details',
-        'label' => 'Banner',
-        'type' => 'mediafinder',
-        'mode' => 'image',
-        'span' => 'left',
-        'maxItems' => 1,
-      ),
-      'featured_text' => 
-      array (
-        'tab' => 'Details',
-        'label' => 'Featured Text',
-        'type' => 'textarea',
-        'size' => 'tiny',
-        'span' => 'left',
-      ),
-      'categories' => 
-      array (
-        'tab' => 'Details',
-        'label' => 'Categories',
-        'commentAbove' => 'Select categories the blog post belongs to',
-        'type' => 'entries',
-        'source' => 'Knowledge\\Category',
-      ),
-    ),
-    'handleSlug' => 'knowledge_article_content',
-  ),
 );

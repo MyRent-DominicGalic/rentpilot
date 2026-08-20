@@ -1,0 +1,62 @@
+APP_NAME="AppName"
+APP_ENV=local
+APP_KEY=
+APP_DEBUG=true
+APP_URL=https://localhost
+APP_LOCALE=hr
+
+ACTIVE_THEME=theme
+BACKEND_URI=backend
+CMS_ROUTE_CACHE=false
+CMS_ASSET_CACHE=false
+LINK_POLICY=detect
+DEFAULT_FILE_MASK=775
+DEFAULT_FOLDER_MASK=775
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=
+DB_USERNAME=
+DB_PASSWORD=
+
+LOG_CHANNEL=single
+BROADCAST_DRIVER=log
+CACHE_DRIVER=file
+QUEUE_CONNECTION=sync
+SESSION_DRIVER=file
+SESSION_LIFETIME=120
+
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
+
+MAIL_MAILER=log
+MAIL_HOST=null
+MAIL_PORT=null
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS=dgalic@tvz.hr
+MAIL_FROM_NAME="${APP_NAME}"
+
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_DEFAULT_REGION=us-east-1
+AWS_BUCKET=
+
+# Google reCAPTCHA keys
+# RECAPTCHA_SITE_KEY="6Le09gIsAAAAABZlzuI779w1NgxXfB-aiRA5f7Lc"
+# RECAPTCHA_SECRET_KEY="6Le09gIsAAAAAF8mvribceWyqWvIvb8d50YFJmVy"
+
+# CloudFlare reCAPTCHA keys
+RECAPTCHA_SITE_KEY= # CloudFlare reCAPTCHA site key
+RECAPTCHA_SECRET_KEY= # CloudFlare reCAPTCHA secret key
+
+# Repo on the server where you edit content (for the Changes page)
+DEPLOY_REPO_DIR= #Current folder path (e.g. C:\www\project)
+
+# GitLab trigger pipeline
+GITLAB_PROJECT_PATH= # GitLab repo name
+GITLAB_TRIGGER_TOKEN= # GitLab trigger token
+GITLAB_DEPLOY_REF= # GitLab branch for deploy
